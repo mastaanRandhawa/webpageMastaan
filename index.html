@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- SEO meta tags -->
+  <meta name="description" content="Personal website of Mastaan Randhawa. Discover my portfolio, resume, and blog.">
+  <meta name="keywords" content="Personal website, portfolio, blog, resume, software developer, skills">
+  <meta name="author" content="Mastaan Randhawa">
+
+  <title>Mastaan Randhawa - Personal Website</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=open_in_new" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Link to CSS (add your stylesheet path here) -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Open Graph Meta Tags for Social Sharing -->
+  <meta property="og:title" content="Mastaan Randhawa - Personal Website">
+  <meta property="og:description" content="Check out my portfolio, blog, and resume.">
+  <meta property="og:image" content="link_to_your_image.jpg">
+  <meta property="og:url" content="https://yourwebsite.com">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body>
+  <!-- Header Section -->
+  <header>
+    <nav>
+      <button class="burger" onclick="toggleMenu()">☰</button>
+      <ul id="menu">
+        <li><a href="#portfolio">PORTFOLIO</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#resume">RESUME</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+  <!-- Intro Section -->
+  <section class="hero-section py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Image (Right on larger screens) -->
+        <div class="col-md-6 order-md-1 hero-image text-center">
+          <img src="imgs/mastaanPhoto.JPEG" alt="Mastaan Randhawa Portrait" class="img-fluid rounded">
+        </div>
+        <!-- Text Content (Left on larger screens) -->
+        <div class="col-md-6 order-md-2 hero-content">
+          <h1>Hi, I am Mastaan Randhawa.</h1>
+          <p>Welcome! Dive in to learn more about who I am, what I do, and the journey I’m on.</p>
+          <a href="#portfolio">
+            <input type="submit" value="Explore" class="btn btn-primary rounded-0 py-2 px-4">
+          </a>
+          <!-- Social Links -->
+          <div class="social-links mt-4">
+            <a href="https://github.com/mastaanRandhawa" target="_blank">
+              <img class="imglogo" src="imgs/github.svg" alt="GitHub Logo" style="margin-right: 10px;">
+            </a>
+            <a href="https://linkedin.com/in/MastaanRandhawa" target="_blank">
+              <img class="imglogo" src="imgs/linkdin.svg" alt="LinkedIn Logo">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Portfolio Section -->
+  <section>
+    <section id="portfolio">
+      <h2>PORTFOLIO</h2>
+
+      <!-- Web Development Section -->
+      <h3>WEB DEVELOPMENT</h3>
+      <div class="portfolio-items web-portfolio"> <!-- Added class "web-portfolio" -->
+        <div class="card">
+          <h3>AK WRAPS WEBSITE</h3>
+          <img src="imgs/akwrapsimage.png" alt="AK Wraps Website Screenshot">
+          <p>Designed and built the AK Wraps website using THREEjs, HTML, CSS, Bootstrap, and JavaScript, creating an engaging and responsive user experience.</p>
+          <a href="https://akwraps.ca/landingPage" target="_blank">
+            <span class="material-symbols-outlined">open_in_new</span>
+          </a>
+        </div>
+        <div class="card">
+          <h3>FERRARI WEBSITE</h3>
+          <img src="imgs/ferrariWebsite.png" alt="Ferrari Website Screenshot">
+          <p>Developed a custom Ferrari-themed website, showcasing my front-end development skills through an elegant and dynamic design.</p>
+          <a href="https://mastaanrandhawa.github.io/Ferrari-Website/" target="_blank">
+            <span class="material-symbols-outlined">open_in_new</span>
+          </a>
+        </div>
+        <div class="card">
+          <h3>LOGO WEBSITE</h3>
+          <img src="imgs/logoWebsite.png" alt="Logo Website Screenshot">
+          <p>Developed a professional logo design site, demonstrating expertise in creating seamless user experiences.
+          </p>
+          <a href="https://mastaanrandhawa.github.io/Logo-Design-Website/" target="_blank">
+            <span class="material-symbols-outlined">open_in_new</span>
+          </a>
+        </div>
+
+        <div class="card hidden">
+          <h3>ROAR BIKE WEBSITE</h3>
+          <img src="imgs/roarcycle.png" alt="Roar Cycle Website Screenshot">
+          <p>Developed a mobile bike repair service website, emphasizing user-friendly design and streamlined booking to enhance customer convenience.</p>
+          <a href="https://mastaanrandhawa.github.io/Roar-Cycle/" target="_blank">
+            <span class="material-symbols-outlined">open_in_new</span>
+          </a>
+        </div>
+
+      </div>
+      <button id="show-more-web" class="btn btn-primary mt-4">Show More</button>
+      <a href="#portfolio">
+        <button id="hide-web" class="btn btn-secondary mt-4 hidden">Back</button> <!-- Hide button --></a>
+      <!-- Programming Section -->
+      <h3 style="padding-top: 125px;">PROGRAMMING</h3>
+      <div class="portfolio-items programming-portfolio"> <!-- Added class "programming-portfolio" -->
+        <div class="card">
+          <h3>RISC-V PROCESSOR</h3>
+          <img src="imgs/C_Hello_World_Program.jpg" alt="RISC-V Processor Screenshot">
+          <p>Developed a RISC-V processor in C/C++/Assembly, implementing RISC-V instructions with custom slt-type
+            instructions.</p>
+
+        </div>
+        <div class="card">
+          <h3>Sorting Algorithms</h3>
+          <img src="imgs/C_Hello_World_Program.jpg" alt="Sorting Algorithms Screenshot">
+          <p>Implemented seven sorting algorithms, including bubble sort, insertion sort, and quick sort, adhering to
+            strict coding standards.</p>
+
+        </div>
+        <div class="card">
+          <h3>AVL Tree Data Structure</h3>
+          <img src="imgs/C_Hello_World_Program.jpg" alt="AVL Tree Project Screenshot">
+          <p>Constructed a Wordlist class using AVL tree data structure, eliminating reliance on vectors, arrays, or
+            linked lists.</p>
+
+        </div>
+        <div class="card hidden">
+          <h3>Multi-level Cache System</h3>
+          <img src="imgs/C_Hello_World_Program.jpg" alt="Multi-level Cache System Screenshot">
+          <p>Developed and managed multiple cache projects using C/C++. Implemented LRU and LFU eviction policies.</p>
+
+        </div>
+        <div class="card hidden">
+          <h3>Vector Algorithms</h3>
+          <img src="imgs/C_Hello_World_Program.jpg" alt="Vector Algorithms Project Screenshot">
+          <p>Developed SoASerial, SoAVector, and ReluVector. Implemented IMAX for maximum index identification.</p>
+
+        </div>
+        <div class="card hidden">
+          <h3>Sparse Matrix Vector</h3>
+          <img src="imgs/C_Hello_World_Program.jpg" alt="Sparse Matrix Vector Project Screenshot">
+          <p>Implemented assembly functions for dot products. Developed Sparse Matrix-Vector Multiplication function.
+          </p>
+
+        </div>
+        <div class="card hidden">
+          <h3>Linked List Implementation in C</h3>
+          <img src="imgs/C_Hello_World_Program.jpg" alt="Linked List Project Screenshot">
+          <p>Implemented a dynamic linked list in C. Includes a test suite and Makefile for easy compilation.</p>
+
+        </div>
+        <div class="card hidden">
+          <h3>Custom ls Command Implementation in C</h3>
+          <img src="imgs/C_Hello_World_Program.jpg" alt="Custom ls Command Project Screenshot">
+          <p>Developed a custom `ls` command in C, mimicking Unix's ls utility with options for inode display and
+            long-format listing.</p>
+        </div>
+        <div class="card hidden">
+          <h3>Concurrent Data Communication in C</h3>
+          <img src="imgs/C_Hello_World_Program.jpg" alt="Concurrent Data Communication Project Screenshot">
+          <p>Created a framework for concurrent data communication in C, using mutex locks to ensure thread-safe
+            operations.</p>
+
+          </a>
+        </div>
+        <div class="card hidden">
+          <h3>Inter-Process Communication and Global Variable Management in C</h3>
+          <img src="imgs/C_Hello_World_Program.jpg" alt="Inter-Process Communication Project Screenshot">
+          <p>Built an architecture for IPC and global variable management in C. Supports POSIX IPC mechanisms.</p>
+        </div>
+      </div>
+      <button id="show-more-programming" class="btn btn-primary">Show More</button>
+      <a href="#portfolio">
+        <button id="hide-programming" class="btn btn-secondary hidden">Back</button> <!-- Hide button -->
+      </a>
+
+    </section>
+  </section>
+
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>ABOUT ME</h2>
+    <p>Hi, I'm Mastaan Randhawa, a Software Developer currently studying Computer Science
+      at Simon Fraser University. I specialize in developing software solutions with a focus on systems programming, and
+      I am passionate about applying creative problem-solving skills in both team and individual projects.</p>
+  </section>
+
+  <!-- Resume Section -->
+  <section id="resume">
+    <h2>RESUME</h2>
+    <a href="resume.pdf" target="_blank">
+      <input type="submit" value="View Resume" class="btn btn-primary">
+    </a>
+  </section>
+
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>CONTACT ME</h2>
+    <p>If you’d like to get in touch, drop me an email using the form below.</p>
+    <form class="border-right pr-5 mb-5" id="contactForm">
+      <div class="row">
+        <div class="col-md-6 form-group">
+          <input type="text" class="form-control" name="fname" id="fname" placeholder="First name" required />
+        </div>
+        <div class="col-md-6 form-group">
+          <input type="text" class="form-control" name="lname" id="lname" placeholder="Last name" required />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 form-group">
+          <input type="email" class="form-control" name="email" id="email" placeholder="Email" required />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 form-group">
+          <textarea class="form-control" name="message" id="message" cols="30" rows="25" placeholder="Message"
+            required></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </div>
+      </div>
+    </form>
+    <div id="form-message-warning mt-4"></div>
+    <div id="form-message-success">Your message was sent, thank you!</div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 Mastaan Randhawa. All rights reserved.</p>
+  </footer>
+
+
+  <!-- Include EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("M5PuNXGJVcJ1G8kQU"); // Your public key
+    })();
+
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent default form submission
+
+      emailjs.sendForm('service_1el02mt', 'template_y61qgki', this)
+        .then(function () {
+          document.getElementById("form-message-success").style.display = "block"; // Show success message
+          document.getElementById("form-message-warning").style.display = "none"; // Hide warning message
+          document.getElementById("contactForm").reset(); // Reset form fields
+        }, function (error) {
+          console.error("EmailJS error: ", error);
+          document.getElementById("form-message-warning").textContent = "Failed to send your message. Please try again.";
+          document.getElementById("form-message-warning").style.display = "block"; // Show warning message
+          document.getElementById("form-message-success").style.display = "none"; // Hide success message
+        });
+    });
+  </script>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const showMoreWebButton = document.getElementById("show-more-web");
+      const hideWebButton = document.getElementById("hide-web");
+      const webCards = document.querySelectorAll(".web-portfolio .card");
+
+      const showMoreProgrammingButton = document.getElementById("show-more-programming");
+      const hideProgrammingButton = document.getElementById("hide-programming");
+      const programmingCards = document.querySelectorAll(".programming-portfolio .card");
+
+      const cardsPerRow = 3; // Number of cards per row
+      const visibleRows = 1; // Number of rows to display initially
+
+      // Function to hide extra cards
+      function hideExtraCards(cards) {
+        cards.forEach((card, index) => {
+          if (index >= visibleRows * cardsPerRow) {
+            card.classList.add("hidden");
+          }
+        });
+      }
+
+      // Initially hide extra web and programming cards
+      hideExtraCards(webCards);
+      hideExtraCards(programmingCards);
+
+      // Show More and Hide for Web Development
+      showMoreWebButton.addEventListener("click", () => {
+        webCards.forEach(card => card.classList.remove("hidden"));
+        showMoreWebButton.classList.add("hidden");
+        hideWebButton.classList.remove("hidden");
+      });
+
+      hideWebButton.addEventListener("click", () => {
+        hideExtraCards(webCards);
+        showMoreWebButton.classList.remove("hidden");
+        hideWebButton.classList.add("hidden");
+      });
+
+      // Show More and Hide for Programming
+      showMoreProgrammingButton.addEventListener("click", () => {
+        programmingCards.forEach(card => card.classList.remove("hidden"));
+        showMoreProgrammingButton.classList.add("hidden");
+        hideProgrammingButton.classList.remove("hidden");
+      });
+
+      hideProgrammingButton.addEventListener("click", () => {
+        hideExtraCards(programmingCards);
+        showMoreProgrammingButton.classList.remove("hidden");
+        hideProgrammingButton.classList.add("hidden");
+      });
+    });
+  </script>
+
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("active");
+    }
+
+  </script>
+</body>
+
+</html>
