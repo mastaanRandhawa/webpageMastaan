@@ -1,4 +1,14 @@
 /* General Body Styling */
+:root {
+  --color-primary: #3498db;
+  --color-secondary: #2ecc71;
+  --color-accent: #e74c3c;
+  --color-dark: #2c3e50;
+  --color-lowdark: #b7b9b6;
+  --color-light: #ecf0f1;
+  --color-white: #fbfbfb;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -15,6 +25,7 @@ body {
   border-right: 1px var(--color-lowdark) solid;
   padding-left: var(--padding-medium);
   padding-right: var(--padding-medium);
+  background-color: var(--color-white);
   background-color: var(--color-white);
   color: #000;
 }
@@ -103,7 +114,7 @@ textarea {
 
 .form-group input,
 .form-group textarea {
-  background-color: var(--color-white);
+  /* background-color: var(--color-white); */
   border: 1px var(--color-lowdark) solid;
   margin-top: var(--margin-small);
   width: 100%;
@@ -146,6 +157,7 @@ textarea {
   box-sizing: border-box;
   /* Ensures padding doesn't affect width */
 }
+
 
 .btn,
 .form-control {
@@ -220,10 +232,9 @@ form .row .form-group {
   color: var(--color-light);
   border: none;
   border-radius: 0;
-  color: #fff;
   padding: var(--padding-small) var(--padding-medium);
   font-weight: bold;
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-small) !important;
   cursor: pointer;
   transition: background-color 0.5s;
   width: 60%;
@@ -249,7 +260,6 @@ label.error {
   /* Allows the user to resize if needed */
 }
 
-
 .submitting {
   float: left;
   width: 100%;
@@ -271,7 +281,7 @@ label.error {
 
 #portfolio h3 {
   text-align: left;
-  padding-left: 5%;
+  padding-left: 1%;
 }
 
 .portfolio-items {
@@ -282,11 +292,12 @@ label.error {
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, .25);
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(15px);
   padding: var(--padding-small);
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.5s ease, box-shadow 0.5s ease;
   text-align: center;
   /* Aligns text to the left */
@@ -344,14 +355,14 @@ a:hover {
   transition: 0.5s;
 }
 
-.imglogo{
+.imglogo {
   width: 40px;
   height: 40px;
   border-radius: 5px;
   transition: 0.5s;
 }
 
-.imglogo:hover{
+.imglogo:hover {
   transition: 0.5s;
   border-radius: 12px;
 }
@@ -362,6 +373,7 @@ a:hover {
     grid-template-columns: 1fr;
   }
 }
+
 /* General nav styling */
 nav {
   display: flex;
@@ -376,6 +388,57 @@ nav {
   background: none;
   border: none;
   cursor: pointer;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border: 1px #ccc solid;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked+.slider {
+  background-color: #2c3e50;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px #2c3e50;
+}
+
+input:checked+.slider:before {
+  transform: translateX(26px);
 }
 
 /* Menu styling */
@@ -439,18 +502,10 @@ nav {
     --font-size-large: 28px;
     --font-size-xlarge: 36px;
 
-    --color-primary: #3498db;
-    --color-secondary: #2ecc71;
-    --color-accent: #e74c3c;
-    --color-dark:
-      --color-lowdark: #b7b9b6;
-    --color-light: #ecf0f1;
-    --color-white: #fbfbfb;
   }
 
   .form-group input,
   .form-group textarea {
-    background-color: var(--color-white);
     border: 1px var(--color-lowdark) solid;
     margin-top: var(--margin-small);
   }
@@ -480,18 +535,10 @@ nav {
     --font-size-large: 38px;
     --font-size-xlarge: 46px;
 
-    --color-primary: #3498db;
-    --color-secondary: #2ecc71;
-    --color-accent: #e74c3c;
-    --color-dark: #2c3e50;
-    --color-lowdark: #b7b9b6;
-    --color-light: #ecf0f1;
-    --color-white: #fbfbfb;
   }
 
   .form-group input,
   .form-group textarea {
-    background-color: var(--color-white);
     border: 1px var(--color-lowdark) solid;
     margin-top: var(--margin-small);
   }
@@ -521,13 +568,6 @@ nav {
     --font-size-large: 24px;
     --font-size-xlarge: 32px;
 
-    --color-primary: #3498db;
-    --color-secondary: #2ecc71;
-    --color-accent: #e74c3c;
-    --color-dark: #2c3e50;
-    --color-lowdark: #b7b9b6;
-    --color-light: #ecf0f1;
-    --color-white: #fbfbfb;
   }
 
   form.border-right {
@@ -537,7 +577,6 @@ nav {
 
   .form-group input,
   .form-group textarea {
-    background-color: var(--color-white);
     border: 1px var(--color-lowdark) solid;
     margin-top: var(--margin-small);
   }
@@ -592,13 +631,6 @@ nav {
     --font-size-large: 22px;
     --font-size-xlarge: 28px;
 
-    --color-primary: #3498db;
-    --color-secondary: #2ecc71;
-    --color-accent: #e74c3c;
-    --color-dark: #2c3e50;
-    --color-lowdark: #b7b9b6;
-    --color-light: #ecf0f1;
-    --color-white: #fbfbfb;
   }
 
   /* Contact Form Styling */
@@ -612,7 +644,6 @@ nav {
 
   .form-group input,
   .form-group textarea {
-    background-color: var(--color-white);
     border: 1px var(--color-lowdark) solid;
     margin-top: var(--margin-small);
   }
@@ -667,13 +698,6 @@ nav {
     --font-size-large: 15px;
     --font-size-xlarge: 20px;
 
-    --color-primary: #3498db;
-    --color-secondary: #2ecc71;
-    --color-accent: #e74c3c;
-    --color-dark: #2c3e50;
-    --color-lowdark: #b7b9b6;
-    --color-light: #ecf0f1;
-    --color-white: #fbfbfb;
   }
 
   /* Contact Form Styling */
@@ -687,7 +711,6 @@ nav {
 
   .form-group input,
   .form-group textarea {
-    background-color: var(--color-white);
     border: 1px var(--color-lowdark) solid;
     margin-top: var(--margin-small);
   }
@@ -726,7 +749,7 @@ nav {
 }
 
 /* Extra small devices (phones, less than 576px) */
-@media (max-width: 400px){
+@media (max-width: 400px) {
   :root {
     --padding-extraSmall: 2px;
     --padding-small: 4px;
@@ -741,14 +764,6 @@ nav {
     --font-size-medium: 14px;
     --font-size-large: 20px;
     --font-size-xlarge: 26px;
-
-    --color-primary: #3498db;
-    --color-secondary: #2ecc71;
-    --color-accent: #e74c3c;
-    --color-dark: #2c3e50;
-    --color-lowdark: #b7b9b6;
-    --color-light: #ecf0f1;
-    --color-white: #fbfbfb;
   }
 
   /* Contact Form Styling */
@@ -762,7 +777,6 @@ nav {
 
   .form-group input,
   .form-group textarea {
-    background-color: var(--color-white);
     border: 1px var(--color-lowdark) solid;
     margin-top: var(--margin-small);
   }
@@ -799,5 +813,3 @@ nav {
     padding-right: var(--padding-extrasmall);
   }
 }
-
-

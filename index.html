@@ -42,6 +42,12 @@
   <header>
     <nav>
       <button class="burger" onclick="toggleMenu()">☰</button>
+
+      <!-- <label class="switch">
+        <input type="checkbox" id="colorToggle" onclick="invertColors()">
+        <span class="slider"></span>
+      </label> -->
+      
       <ul id="menu">
         <li><a href="#portfolio">PORTFOLIO</a></li>
         <li><a href="#about">ABOUT</a></li>
@@ -94,7 +100,8 @@
         <div class="card">
           <h3>AK WRAPS WEBSITE</h3>
           <img src="imgs/akwrapsimage.png" alt="AK Wraps Website Screenshot">
-          <p>Designed and built the AK Wraps website using THREEjs, HTML, CSS, Bootstrap, and JavaScript, creating an engaging and responsive user experience.</p>
+          <p>Designed and built the AK Wraps website using THREEjs, HTML, CSS, Bootstrap, and JavaScript, creating an
+            engaging and responsive user experience.</p>
           <a href="https://akwraps.ca/landingPage" target="_blank">
             <span class="material-symbols-outlined">open_in_new</span>
           </a>
@@ -102,7 +109,8 @@
         <div class="card">
           <h3>FERRARI WEBSITE</h3>
           <img src="imgs/ferrariWebsite.png" alt="Ferrari Website Screenshot">
-          <p>Developed a custom Ferrari-themed website, showcasing my front-end development skills through an elegant and dynamic design.</p>
+          <p>Developed a custom Ferrari-themed website, showcasing my front-end development skills through an elegant
+            and dynamic design.</p>
           <a href="https://mastaanrandhawa.github.io/Ferrari-Website/" target="_blank">
             <span class="material-symbols-outlined">open_in_new</span>
           </a>
@@ -120,7 +128,8 @@
         <div class="card hidden">
           <h3>ROAR BIKE WEBSITE</h3>
           <img src="imgs/roarcycle.png" alt="Roar Cycle Website Screenshot">
-          <p>Developed a mobile bike repair service website, emphasizing user-friendly design and streamlined booking to enhance customer convenience.</p>
+          <p>Developed a mobile bike repair service website, emphasizing user-friendly design and streamlined booking to
+            enhance customer convenience.</p>
           <a href="https://mastaanrandhawa.github.io/Roar-Cycle/" target="_blank">
             <span class="material-symbols-outlined">open_in_new</span>
           </a>
@@ -349,6 +358,33 @@
     function toggleMenu() {
       const menu = document.getElementById("menu");
       menu.classList.toggle("active");
+    }
+
+  </script>
+
+  <script>
+    function invertColors() {
+      const root = document.documentElement;
+      const isInverted = document.getElementById("colorToggle").checked;
+
+      if (isInverted) {
+        root.style.setProperty('--color-primary', '#3498db'); // Light color
+        root.style.setProperty('--color-secondary', '#2ecc71'); // Lowdark color
+        root.style.setProperty('--color-accent', '#e74c3c'); // Dark color
+        root.style.setProperty('--color-dark', '#ffffff'); // Accent color
+        root.style.setProperty('--color-lowdark', '#fbfbfb'); // Secondary color
+        root.style.setProperty('--color-light', '#2c3e50'); // Primary color
+        root.style.setProperty('--color-white', '#2c3e50'); // Darker shade
+      } else {
+        // Revert to original colors
+        root.style.setProperty('--color-primary', '#3498db');
+        root.style.setProperty('--color-secondary', '#2ecc71');
+        root.style.setProperty('--color-accent', '#e74c3c');
+        root.style.setProperty('--color-dark', '#2c3e50');
+        root.style.setProperty('--color-lowdark', '#b7b9b6');
+        root.style.setProperty('--color-light', '#ecf0f1');
+        root.style.setProperty('--color-white', '#fbfbfb');
+      }
     }
 
   </script>
