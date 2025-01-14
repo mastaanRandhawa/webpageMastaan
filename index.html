@@ -14,6 +14,9 @@
 
   <title>Mastaan Randhawa - Personal Website</title>
 
+  <!-- Preload the hero image (critical) -->
+  <link rel="preload" href="imgs/mastaanPhoto.JPEG" as="image">
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,12 +32,12 @@
   <!-- Link to CSS (add your stylesheet path here) -->
   <link rel="stylesheet" href="styles.css">
 
-  <link rel="icon"type="favicon" href="imgs/online-resume.png">
+  <link rel="icon" type="favicon" href="imgs/online-resume.png">
 
   <!-- Open Graph Meta Tags for Social Sharing -->
   <meta property="og:title" content="Mastaan Randhawa - Personal Website">
   <meta property="og:description" content="Check out my portfolio, blog, and resume.">
-  <meta property="og:image" content="link_to_your_image.jpg">
+  <meta property="og:image" content="imgs/mastaanPhoto.JPEG">
   <meta property="og:url" content="https://yourwebsite.com">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -47,12 +50,6 @@
   <header>
     <nav>
       <button class="burger" onclick="toggleMenu()">☰</button>
-
-      <!-- <label class="switch">
-        <input type="checkbox" id="colorToggle" onclick="invertColors()">
-        <span class="slider"></span>
-      </label> -->
-      
       <ul id="menu">
         <li><a href="#portfolio">PORTFOLIO</a></li>
         <li><a href="#about">ABOUT</a></li>
@@ -62,37 +59,65 @@
     </nav>
   </header>
 
-
-
   <!-- Intro Section -->
   <section class="hero-section py-5">
     <div class="container">
       <div class="row align-items-center">
         <!-- Image (Right on larger screens) -->
         <div class="col-md-6 order-md-1 hero-image text-center">
+          <!-- Responsive + Preloaded hero image; not lazy-loaded because it's critical -->
           <img src="imgs/mastaanPhoto.JPEG" alt="Mastaan Randhawa Portrait" class="img-fluid rounded">
         </div>
         <!-- Text Content (Left on larger screens) -->
         <div class="col-md-6 order-md-2 hero-content">
           <h1>Hi, I am Mastaan Randhawa.</h1>
-          <p>Welcome! Dive in to learn more about who I am, what I do, and the journey I’m on.</p>
+          <p>I am <span class="typewriter-text typeWriterspan"></span></p>
+
           <a href="#portfolio">
             <input type="submit" value="Explore" class="btn btn-primary rounded-0 py-2 px-4">
           </a>
           <!-- Social Links -->
           <div class="social-links mt-4">
-            <a href="https://github.com/mastaanRandhawa" target="_blank">
-              <img class="imglogo" src="imgs/github.svg" alt="GitHub Logo" style="margin-right: 10px;">
+            <!-- Inline SVG for GitHub -->
+            <a href="https://github.com/mastaanRandhawa" target="_blank" style="margin-right: 10px;">
+              <svg class="imglogo" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg" aria-label="GitHub Logo">
+                <!-- Replace the path below with the actual GitHub logo path -->
+                <path d="M12 .297c-6.626 0-12 5.373-12 12 
+                         0 5.303 3.438 9.8 8.205 11.385.599.113.82-.26.82-.577 
+                         0-.285-.01-1.04-.016-2.04-3.338.726-4.042-1.61-4.042-1.61 
+                         -.546-1.387-1.333-1.757-1.333-1.757-1.089-.744.084-.729.084-.729 
+                         1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.304 3.495.997 
+                         .108-.776.418-1.305.76-1.605-2.665-.305-5.466-1.333-5.466-5.93 
+                         0-1.31.469-2.381 1.236-3.221-.124-.304-.536-1.527.117-3.176 
+                         0 0 1.008-.322 3.301 1.23a11.52 11.52 0 0 1 3.003-.404 
+                         c1.018.005 2.042.138 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23 
+                         .655 1.649.243 2.872.119 3.176.77.84 1.236 1.911 1.236 3.221 
+                         0 4.61-2.805 5.622-5.476 5.92.43.372.81 1.102.81 2.222 
+                         0 1.604-.014 2.897-.014 3.293 0 .319.217.694.824.576 
+                         4.765-1.587 8.2-6.082 8.2-11.384 0-6.627-5.373-12-12-12z" />
+              </svg>
             </a>
+            <!-- Inline SVG for LinkedIn -->
             <a href="https://linkedin.com/in/MastaanRandhawa" target="_blank">
-              <img class="imglogo" src="imgs/linkdin.svg" alt="LinkedIn Logo">
+              <svg class="imglogo" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn Logo">
+                <!-- Replace the path below with the actual LinkedIn logo path -->
+                <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14 
+                         c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14 
+                         c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.27 
+                         c-.97 0-1.75-.79-1.75-1.76s.78-1.75 
+                         1.75-1.75 1.75.78 1.75 1.75 
+                         -.78 1.76-1.75 1.76zm12.5 11.27h-3v-5.6c0-1.34 
+                         -.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.88v1.37h.04 
+                         c.4-.75 1.38-1.54 2.83-1.54 3.03 0 3.59 2 3.59 4.53v5.64z" />
+              </svg>
             </a>
           </div>
         </div>
       </div>
     </div>
   </section>
-
 
   <!-- Portfolio Section -->
   <section>
@@ -101,29 +126,40 @@
 
       <!-- Web Development Section -->
       <h3>WEB DEVELOPMENT</h3>
-      <div class="portfolio-items web-portfolio"> <!-- Added class "web-portfolio" -->
+      <div class="portfolio-items web-portfolio">
         <div class="card">
           <h3>AK WRAPS WEBSITE</h3>
-          <img src="imgs/akwrapsimage.png" alt="AK Wraps Website Screenshot">
-          <p>Designed and built the AK Wraps website using THREEjs, HTML, CSS, Bootstrap, and JavaScript, creating an
-            engaging and responsive user experience.</p>
+          <!-- Defer offscreen image with lazysizes -->
+          <img data-src="imgs/akwrapsimage.png" class="lazyload img-fluid" alt="AK Wraps Website Screenshot"
+            loading="lazy">
+          <p>
+            Designed and built the AK Wraps website using THREEjs, HTML, CSS, Bootstrap,
+            and JavaScript, creating an engaging and responsive user experience.
+          </p>
+          <!-- If you host your image on a CDN, replace the src with the CDN URL above -->
           <a href="https://akwraps.ca/landingPage" target="_blank">
             <span class="material-symbols-outlined">open_in_new</span>
           </a>
         </div>
+
         <div class="card">
           <h3>FERRARI WEBSITE</h3>
-          <img src="imgs/ferrariWebsite.png" alt="Ferrari Website Screenshot">
-          <p>Developed a custom Ferrari-themed website, showcasing my front-end development skills through an elegant
-            and dynamic design.</p>
+          <img data-src="imgs/ferrariWebsite.png" class="lazyload img-fluid" alt="Ferrari Website Screenshot"
+            loading="lazy">
+          <p>
+            Developed a custom Ferrari-themed website, showcasing my front-end development skills
+            through an elegant and dynamic design.
+          </p>
           <a href="https://mastaanrandhawa.github.io/Ferrari-Website/" target="_blank">
             <span class="material-symbols-outlined">open_in_new</span>
           </a>
         </div>
+
         <div class="card">
           <h3>LOGO WEBSITE</h3>
-          <img src="imgs/logoWebsite.png" alt="Logo Website Screenshot">
-          <p>Developed a professional logo design site, demonstrating expertise in creating seamless user experiences.
+          <img data-src="imgs/logoWebsite.png" class="lazyload img-fluid" alt="Logo Website Screenshot" loading="lazy">
+          <p>
+            Developed a professional logo design site, demonstrating expertise in creating seamless user experiences.
           </p>
           <a href="https://mastaanrandhawa.github.io/Logo-Design-Website/" target="_blank">
             <span class="material-symbols-outlined">open_in_new</span>
@@ -132,102 +168,135 @@
 
         <div class="card hidden">
           <h3>ROAR BIKE WEBSITE</h3>
-          <img src="imgs/roarcycle.png" alt="Roar Cycle Website Screenshot">
-          <p>Developed a mobile bike repair service website, emphasizing user-friendly design and streamlined booking to
-            enhance customer convenience.</p>
+          <img data-src="imgs/roarcycle.png" class="lazyload img-fluid" alt="Roar Cycle Website Screenshot"
+            loading="lazy">
+          <p>
+            Developed a mobile bike repair service website, emphasizing user-friendly design
+            and streamlined booking to enhance customer convenience.
+          </p>
           <a href="https://mastaanrandhawa.github.io/Roar-Cycle/" target="_blank">
             <span class="material-symbols-outlined">open_in_new</span>
           </a>
         </div>
-
       </div>
       <button id="show-more-web" class="btn btn-primary mt-4">Show More</button>
       <a href="#portfolio">
-        <button id="hide-web" class="btn btn-secondary mt-4 hidden">Back</button> <!-- Hide button --></a>
+        <button id="hide-web" class="btn btn-secondary mt-4 hidden">Back</button>
+      </a>
+
       <!-- Programming Section -->
       <h3 style="padding-top: 125px;">PROGRAMMING</h3>
-      <div class="portfolio-items programming-portfolio"> <!-- Added class "programming-portfolio" -->
+      <div class="portfolio-items programming-portfolio">
         <div class="card">
           <h3>RISC-V PROCESSOR</h3>
-          <img src="imgs/C_Hello_World_Program.jpg" alt="RISC-V Processor Screenshot">
-          <p>Developed a RISC-V processor in C/C++/Assembly, implementing RISC-V instructions with custom slt-type
-            instructions.</p>
-
+          <img data-src="imgs/C_Hello_World_Program.jpg" class="lazyload img-fluid" alt="RISC-V Processor Screenshot"
+            loading="lazy">
+          <p>
+            Developed a RISC-V processor in C/C++/Assembly, implementing RISC-V instructions with custom slt-type
+            instructions.
+          </p>
         </div>
+
         <div class="card">
           <h3>Sorting Algorithms</h3>
-          <img src="imgs/C_Hello_World_Program.jpg" alt="Sorting Algorithms Screenshot">
-          <p>Implemented seven sorting algorithms, including bubble sort, insertion sort, and quick sort, adhering to
-            strict coding standards.</p>
-
+          <img data-src="imgs/C_Hello_World_Program.jpg" class="lazyload img-fluid" alt="Sorting Algorithms Screenshot"
+            loading="lazy">
+          <p>
+            Implemented seven sorting algorithms, including bubble sort, insertion sort, and quick sort,
+            adhering to strict coding standards.
+          </p>
         </div>
+
         <div class="card">
           <h3>AVL Tree Data Structure</h3>
-          <img src="imgs/C_Hello_World_Program.jpg" alt="AVL Tree Project Screenshot">
-          <p>Constructed a Wordlist class using AVL tree data structure, eliminating reliance on vectors, arrays, or
-            linked lists.</p>
-
+          <img data-src="imgs/C_Hello_World_Program.jpg" class="lazyload img-fluid" alt="AVL Tree Project Screenshot"
+            loading="lazy">
+          <p>
+            Constructed a Wordlist class using AVL tree data structure, eliminating reliance on vectors, arrays, or
+            linked lists.
+          </p>
         </div>
+
         <div class="card hidden">
           <h3>Multi-level Cache System</h3>
-          <img src="imgs/C_Hello_World_Program.jpg" alt="Multi-level Cache System Screenshot">
-          <p>Developed and managed multiple cache projects using C/C++. Implemented LRU and LFU eviction policies.</p>
-
+          <img data-src="imgs/C_Hello_World_Program.jpg" class="lazyload img-fluid"
+            alt="Multi-level Cache System Screenshot" loading="lazy">
+          <p>
+            Developed and managed multiple cache projects using C/C++. Implemented LRU and LFU eviction policies.
+          </p>
         </div>
+
         <div class="card hidden">
           <h3>Vector Algorithms</h3>
-          <img src="imgs/C_Hello_World_Program.jpg" alt="Vector Algorithms Project Screenshot">
-          <p>Developed SoASerial, SoAVector, and ReluVector. Implemented IMAX for maximum index identification.</p>
-
+          <img data-src="imgs/C_Hello_World_Program.jpg" class="lazyload img-fluid"
+            alt="Vector Algorithms Project Screenshot" loading="lazy">
+          <p>
+            Developed SoASerial, SoAVector, and ReluVector. Implemented IMAX for maximum index identification.
+          </p>
         </div>
+
         <div class="card hidden">
           <h3>Sparse Matrix Vector</h3>
-          <img src="imgs/C_Hello_World_Program.jpg" alt="Sparse Matrix Vector Project Screenshot">
-          <p>Implemented assembly functions for dot products. Developed Sparse Matrix-Vector Multiplication function.
+          <img data-src="imgs/C_Hello_World_Program.jpg" class="lazyload img-fluid"
+            alt="Sparse Matrix Vector Project Screenshot" loading="lazy">
+          <p>
+            Implemented assembly functions for dot products. Developed Sparse Matrix-Vector Multiplication function.
           </p>
-
         </div>
+
         <div class="card hidden">
           <h3>Linked List Implementation in C</h3>
-          <img src="imgs/C_Hello_World_Program.jpg" alt="Linked List Project Screenshot">
-          <p>Implemented a dynamic linked list in C. Includes a test suite and Makefile for easy compilation.</p>
-
+          <img data-src="imgs/C_Hello_World_Program.jpg" class="lazyload img-fluid" alt="Linked List Project Screenshot"
+            loading="lazy">
+          <p>
+            Implemented a dynamic linked list in C. Includes a test suite and Makefile for easy compilation.
+          </p>
         </div>
+
         <div class="card hidden">
           <h3>Custom ls Command Implementation in C</h3>
-          <img src="imgs/C_Hello_World_Program.jpg" alt="Custom ls Command Project Screenshot">
-          <p>Developed a custom `ls` command in C, mimicking Unix's ls utility with options for inode display and
-            long-format listing.</p>
+          <img data-src="imgs/C_Hello_World_Program.jpg" class="lazyload img-fluid"
+            alt="Custom ls Command Project Screenshot" loading="lazy">
+          <p>
+            Developed a custom `ls` command in C, mimicking Unix's ls utility with options for inode display and
+            long-format listing.
+          </p>
         </div>
+
         <div class="card hidden">
           <h3>Concurrent Data Communication in C</h3>
-          <img src="imgs/C_Hello_World_Program.jpg" alt="Concurrent Data Communication Project Screenshot">
-          <p>Created a framework for concurrent data communication in C, using mutex locks to ensure thread-safe
-            operations.</p>
-
-          </a>
+          <img data-src="imgs/C_Hello_World_Program.jpg" class="lazyload img-fluid"
+            alt="Concurrent Data Communication Project Screenshot" loading="lazy">
+          <p>
+            Created a framework for concurrent data communication in C, using mutex locks to ensure thread-safe
+            operations.
+          </p>
         </div>
+
         <div class="card hidden">
           <h3>Inter-Process Communication and Global Variable Management in C</h3>
-          <img src="imgs/C_Hello_World_Program.jpg" alt="Inter-Process Communication Project Screenshot">
-          <p>Built an architecture for IPC and global variable management in C. Supports POSIX IPC mechanisms.</p>
+          <img data-src="imgs/C_Hello_World_Program.jpg" class="lazyload img-fluid"
+            alt="Inter-Process Communication Project Screenshot" loading="lazy">
+          <p>
+            Built an architecture for IPC and global variable management in C. Supports POSIX IPC mechanisms.
+          </p>
         </div>
       </div>
       <button id="show-more-programming" class="btn btn-primary">Show More</button>
       <a href="#portfolio">
-        <button id="hide-programming" class="btn btn-secondary hidden">Back</button> <!-- Hide button -->
+        <button id="hide-programming" class="btn btn-secondary hidden">Back</button>
       </a>
-
     </section>
   </section>
-
 
   <!-- About Section -->
   <section id="about">
     <h2>ABOUT ME</h2>
-    <p>Hi, I'm Mastaan Randhawa, a Software Developer currently studying Computer Science
+    <p>
+      Hi, I'm Mastaan Randhawa, a Software Developer currently studying Computer Science
       at Simon Fraser University. I specialize in developing software solutions with a focus on systems programming, and
-      I am passionate about applying creative problem-solving skills in both team and individual projects.</p>
+      I am passionate about applying creative problem-solving skills in both team and individual projects.
+    </p>
   </section>
 
   <!-- Resume Section -->
@@ -237,7 +306,6 @@
       <input type="submit" value="View Resume" class="btn btn-primary">
     </a>
   </section>
-
 
   <!-- Contact Section -->
   <section id="contact">
@@ -278,7 +346,6 @@
     <p>&copy; 2024 Mastaan Randhawa. All rights reserved.</p>
   </footer>
 
-
   <!-- Include EmailJS SDK -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script type="text/javascript">
@@ -303,7 +370,7 @@
     });
   </script>
 
-
+  <!-- Show More/Show Less script for portfolio -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const showMoreWebButton = document.getElementById("show-more-web");
@@ -358,41 +425,57 @@
     });
   </script>
 
-
+  <!-- Navigation toggle script -->
   <script>
     function toggleMenu() {
       const menu = document.getElementById("menu");
       menu.classList.toggle("active");
     }
-
   </script>
 
+  <!-- Typewriter effect script -->
   <script>
-    function invertColors() {
-      const root = document.documentElement;
-      const isInverted = document.getElementById("colorToggle").checked;
+    document.addEventListener("DOMContentLoaded", function (event) {
+      var dataText = [
+        "a C/C++ Enthusiast 💻.",
+        "skilled in JavaScript & Web Tech 🌐.",
+        "a HTML/CSS Artist 🎨.",
+        "a creative Figma Designer ✏️.",
+        "a master of Frameworks: Bootstrap, ReactJS, ThreeJS, SpringBoot 🛠️.",
+        "a database Whiz: MongoDB, MySQL, SQL/SQLite 🗃️.",
+        "experienced with DevOps & Cloud: Docker, AWS ☁️.",
+        "hands-on with Deployment Tools like Render 🚀.",
+        "Let's build something amazing together!"
+      ];
 
-      if (isInverted) {
-        root.style.setProperty('--color-primary', '#3498db'); // Light color
-        root.style.setProperty('--color-secondary', '#2ecc71'); // Lowdark color
-        root.style.setProperty('--color-accent', '#e74c3c'); // Dark color
-        root.style.setProperty('--color-dark', '#ffffff'); // Accent color
-        root.style.setProperty('--color-lowdark', '#fbfbfb'); // Secondary color
-        root.style.setProperty('--color-light', '#2c3e50'); // Primary color
-        root.style.setProperty('--color-white', '#2c3e50'); // Darker shade
-      } else {
-        // Revert to original colors
-        root.style.setProperty('--color-primary', '#3498db');
-        root.style.setProperty('--color-secondary', '#2ecc71');
-        root.style.setProperty('--color-accent', '#e74c3c');
-        root.style.setProperty('--color-dark', '#2c3e50');
-        root.style.setProperty('--color-lowdark', '#b7b9b6');
-        root.style.setProperty('--color-light', '#ecf0f1');
-        root.style.setProperty('--color-white', '#fbfbfb');
+      function typeWriter(text, i, fnCallback) {
+        if (i < text.length) {
+          document.querySelector(".typewriter-text").innerHTML =
+            text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
+
+          setTimeout(function () {
+            typeWriter(text, i + 1, fnCallback);
+          }, 100);
+        } else if (typeof fnCallback === "function") {
+          setTimeout(fnCallback, 1000);
+        }
       }
-    }
 
+      function StartTextAnimation(i) {
+        if (i >= dataText.length) {
+          i = 0;
+        }
+        typeWriter(dataText[i], 0, function () {
+          StartTextAnimation(i + 1);
+        });
+      }
+      StartTextAnimation(0);
+    });
   </script>
+
+  <!-- lazysizes script for deferred offscreen images -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
+
 </body>
 
 </html>
