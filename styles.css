@@ -362,11 +362,6 @@ a:hover {
   transition: 0.5s;
 }
 
-.imglogo:hover {
-  transition: 0.5s;
-  border-radius: 12px;
-}
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .portfolio-items {
