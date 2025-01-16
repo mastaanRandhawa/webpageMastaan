@@ -177,9 +177,11 @@ form .row .form-group {
 }
 
 #portfolio {
+  background-color: #ecf0f1;
+  border-radius: 25px;
   margin-left: auto;
   margin-right: auto;
-  width: 80%;
+  width: 95%;
 }
 
 #form-message-warning,
@@ -286,26 +288,23 @@ label.error {
 
 .portfolio-items {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 20px;
   margin-top: 20px;
 }
 
 .card {
-  border: 1px solid rgba(255, 255, 255, .25);
-  background-color: rgba(255, 255, 255, 0.45);
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(15px);
+  background-color: var(--color-white);
   padding: var(--padding-small);
-  border-radius: 10px;
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  border: 1px solid var(--color-dark);
+  transition: 0.5s;
   text-align: center;
   /* Aligns text to the left */
 }
 
 .card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.275);
 }
 
 .card h3 {
@@ -317,10 +316,10 @@ label.error {
 .card img {
   width: 100%;
   height: 200px;
-  max-height: 300px;
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 15px;
+  border: 1px solid var(--color-dark);
 }
 
 .card p {
