@@ -26,7 +26,6 @@ body {
   padding-left: var(--padding-medium);
   padding-right: var(--padding-medium);
   background-color: var(--color-white);
-  background-color: var(--color-white);
   color: #000;
 }
 
@@ -308,7 +307,7 @@ label.error {
 }
 
 .card h3 {
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-medium) !important;
   color: var(--color-dark);
   margin-bottom: 10px;
 }
@@ -324,7 +323,7 @@ label.error {
 
 .card p {
   color: var(--color-dark);
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-small) !important;
   text-align: left;
   line-height: 1.6;
   margin-bottom: 10px;
@@ -687,10 +686,10 @@ input:checked+.slider:before {
     --margin-medium: 8px;
     --margin-large: 15px;
 
-    --font-size-extraSmall: 4px --font-size-small: 6px;
-    --font-size-medium: 10px;
-    --font-size-large: 15px;
-    --font-size-xlarge: 20px;
+    --font-size-extraSmall: 4px --font-size-small: 10px;
+    --font-size-medium: 14px;
+    --font-size-large: 20px;
+    --font-size-xlarge: 26px;
 
   }
 
@@ -732,6 +731,10 @@ input:checked+.slider:before {
 
   .card img {
     height: 150px;
+  }
+  
+  .card p {
+    font-size: var(--font-size-extraSmall) !important;
   }
 
   ul li a,
@@ -755,9 +758,9 @@ input:checked+.slider:before {
     --margin-large: 20px;
 
     --font-size-extraSmall: 4px --font-size-small: 10px;
-    --font-size-medium: 14px;
-    --font-size-large: 20px;
-    --font-size-xlarge: 26px;
+    --font-size-medium: 14px !important;
+    --font-size-large: 20px !important;
+    --font-size-xlarge: 26px !important;
   }
 
   /* Contact Form Styling */
@@ -798,6 +801,10 @@ input:checked+.slider:before {
 
   .card img {
     height: 150px;
+  }
+
+  .card p {
+    font-size: var(--font-size-extraSmall) !important;
   }
 
   ul li a,

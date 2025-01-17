@@ -83,7 +83,6 @@
             <a href="https://github.com/mastaanRandhawa" target="_blank" style="margin-right: 10px;">
               <svg class="imglogo" width="32" height="32" viewBox="0 0 24 24" fill="#2c3e50"
                 xmlns="http://www.w3.org/2000/svg" aria-label="GitHub Logo">
-                <!-- Replace the path below with the actual GitHub logo path -->
                 <path d="M12 .297c-6.626 0-12 5.373-12 12 
                          0 5.303 3.438 9.8 8.205 11.385.599.113.82-.26.82-.577 
                          0-.285-.01-1.04-.016-2.04-3.338.726-4.042-1.61-4.042-1.61 
@@ -103,7 +102,6 @@
             <a href="https://linkedin.com/in/MastaanRandhawa" target="_blank">
               <svg class="imglogo" width="32" height="32" viewBox="0 0 24 24" fill="#2c3e50"
                 xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn Logo">
-                <!-- Replace the path below with the actual LinkedIn logo path -->
                 <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14 
                          c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14 
                          c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.27 
@@ -129,7 +127,6 @@
       <h3>WEB DEVELOPMENT</h3>
       <div class="portfolio-items web-portfolio">
         <div class="card">
-          <!-- Defer offscreen image with lazysizes -->
           <img data-src="imgs/akwrapsimage.png" class="lazyload img-fluid" alt="AK Wraps Website Screenshot"
             loading="lazy">
           <h3>AK WRAPS WEBSITE</h3>
@@ -137,7 +134,6 @@
             Designed and built the AK Wraps website using THREEjs, HTML, CSS, Bootstrap,
             and JavaScript, creating an engaging and responsive user experience.
           </p>
-          <!-- If you host your image on a CDN, replace the src with the CDN URL above -->
           <a href="https://akwraps.ca/landingPage" target="_blank">
             <span class="material-symbols-outlined">open_in_new</span>
           </a>
@@ -293,17 +289,22 @@
   <!-- About Section -->
   <section id="about">
     <h2>ABOUT ME</h2>
+    <!-- 3D Scene Container -->
+    <div id="three-container" style="width: 100%; height: 500px; position: relative;">
+      <!-- The 3D canvas will be appended here via JavaScript -->
+    </div>
     <p>
       Hi, I'm Mastaan Randhawa, a Software Developer currently studying Computer Science
       at Simon Fraser University. I specialize in developing software solutions with a focus on systems programming, and
       I am passionate about applying creative problem-solving skills in both team and individual projects.
     </p>
+
   </section>
 
   <!-- Resume Section -->
   <section id="resume">
     <h2>RESUME</h2>
-    <a href="resume.pdf" target="_blank">
+    <a href="Mastaan's Resume 2025.pdf" target="_blank">
       <input type="submit" value="View Resume" class="btn btn-primary">
     </a>
   </section>
@@ -476,6 +477,86 @@
   <!-- lazysizes script for deferred offscreen images -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
 
-</body>
+  <!-- Three.js & Orbit/GLTFLoader scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/three@latest/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three/examples/js/controls/OrbitControls.js"></script>
 
+  <!-- 3D Scene Initialization Script -->
+  <script>
+    // Grab our container from the About section
+    const container = document.getElementById('three-container');
+
+    // Scene, Camera, Renderer
+    const scene = new THREE.Scene();
+    scene.background = null; // Make background transparent
+
+    const camera = new THREE.PerspectiveCamera(
+      75,
+      container.clientWidth / container.clientHeight,
+      0.1,
+      1000
+    );
+
+    // Use alpha for transparent background
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    container.appendChild(renderer.domElement);
+
+    // Lighting
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
+    scene.add(ambientLight);
+
+    // const pointLight = new THREE.PointLight(0xffffff, 1);
+    // pointLight.position.set(5, 5, 5);
+    // scene.add(pointLight);
+
+    // Orbit Controls
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.enableZoom = false;
+
+    // Load Earth GLTF Model
+    const loader = new THREE.GLTFLoader();
+    let earth;
+    loader.load(
+      'my_computer.glb', // Replace with the path to your Earth model
+      function (gltf) {
+        earth = gltf.scene;
+        earth.scale.set(1, 1, 1);
+        scene.add(earth);
+      },
+      undefined,
+      function (error) {
+        console.error('An error occurred while loading the Earth model:', error);
+      }
+    );
+
+    // Camera Position
+    camera.position.z = 1;
+
+    // Animate
+    function animate() {
+      requestAnimationFrame(animate);
+
+      // Rotate Earth if loaded
+      if (earth) {
+        earth.rotation.y += 0.0025;
+      }
+
+      controls.update();
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    // Handle Window Resize for responsiveness
+    window.addEventListener('resize', () => {
+      camera.aspect = container.clientWidth / container.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(container.clientWidth, container.clientHeight);
+    });
+  </script>
+
+</body>
 </html>
