@@ -733,6 +733,8 @@ input:checked+.slider:before {
     height: 150px;
   }
   
+
+  
   .card p {
     font-size: var(--font-size-extraSmall) !important;
   }
