@@ -121,10 +121,8 @@
   <!-- Portfolio Section -->
   <section class="portfolioBG">
     <section id="portfolio">
-      <h2>PORTFOLIO</h2>
-
       <!-- Web Development Section -->
-      <h3>WEB DEVELOPMENT</h3>
+      <h2>WEB DEVELOPMENT</h2>
       <div class="portfolio-items web-portfolio">
         <div class="card">
           <img data-src="imgs/akwrapsimage.png" class="lazyload img-fluid" alt="AK Wraps Website Screenshot"
@@ -182,7 +180,7 @@
       </a>
 
       <!-- Programming Section -->
-      <h3 style="padding-top: 125px;">PROGRAMMING</h3>
+      <h2 style="padding-top: 125px;">PROGRAMMING</h2>
       <div class="portfolio-items programming-portfolio">
         <div class="card">
           <img data-src="imgs/C_Hello_World_Program.jpg" class="lazyload img-fluid" alt="RISC-V Processor Screenshot"
@@ -449,7 +447,7 @@
         "Let's build something amazing together!"
       ];
 
-      
+
       function typeWriter(text, i, fnCallback) {
         if (i < text.length) {
           document.querySelector(".typewriter-text").innerHTML =
@@ -483,14 +481,14 @@
   <script src="https://cdn.jsdelivr.net/npm/three/examples/js/loaders/GLTFLoader.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three/examples/js/controls/OrbitControls.js"></script>
   <script>
-  
+
     // Grab container
     const container = document.getElementById('three-container');
-  
+
     // Scene, Camera, Renderer
     const scene = new THREE.Scene();
     scene.background = null; // Transparent
-  
+
     const camera = new THREE.PerspectiveCamera(
       75,
       container.clientWidth / container.clientHeight,
@@ -498,53 +496,53 @@
       1000
     );
     camera.position.set(0, 0, 6);
-  
+
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(container.clientWidth, container.clientHeight);
     container.appendChild(renderer.domElement);
-  
+
     // Light
     const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
     scene.add(ambientLight);
-  
+
     // Raycaster & mouse
     const raycaster = new THREE.Raycaster();
     const mouse = new THREE.Vector2();
-  
+
     // Track mouse state
     let isMouseDown = false;
-  
+
     // Targets
     const mouseTarget = new THREE.Vector3(0, 0, 0);  // Where fish goes when mouse is down
     const randomTarget = new THREE.Vector3(0, 0, 0); // Where fish goes when mouse is up
-  
+
     // Fish model & animation
     let fish, mixer, action;
     let isActionPlaying = false;   // Whether the animation is currently playing
     let animationStartTime = 0;    // Timestamp when 2s animation started
-  
+
     // Constants
     const clock = new THREE.Clock();
     const FISH_SPEED = 2.65;           // Fish movement speed
     const TURN_SPEED = 0.07;           // How quickly fish rotates toward target
     const MIN_SPEED = 0.1;             // Speed threshold to trigger 2s animation
     const RANDOM_RANGE = 5;            // Defines how far from origin the fish can wander
-  
+
     // Orientation offset (rotate 180° around Y if needed)
     const offsetEuler = new THREE.Euler(0, Math.PI, 0, 'XYZ');
     const offsetQuaternion = new THREE.Quaternion().setFromEuler(offsetEuler);
-  
+
     // Keep fish in screen bounds (adjust as needed)
     const BOUNDS = {
       minX: -5, maxX: 5,
       minY: -5, maxY: 5
     };
-  
+
     function clampToScreen(obj) {
       obj.position.x = THREE.MathUtils.clamp(obj.position.x, BOUNDS.minX, BOUNDS.maxX);
       obj.position.y = THREE.MathUtils.clamp(obj.position.y, BOUNDS.minY, BOUNDS.maxY);
     }
-  
+
     // Pick a random target (X, Y) in [-RANDOM_RANGE, RANDOM_RANGE]
     function pickRandomTarget() {
       randomTarget.set(
@@ -553,7 +551,7 @@
         0
       );
     }
-  
+
     // Load the fish model
     const loader = new THREE.GLTFLoader();
     loader.load(
@@ -563,24 +561,24 @@
         fish.scale.set(10, 10, 10);
         fish.position.set(0, 0, 0);
         scene.add(fish);
-  
+
         // Check if animations exist
         if (gltf.animations && gltf.animations.length > 0) {
           // Create an AnimationMixer and play the animation
           mixer = new THREE.AnimationMixer(fish);
-  
+
           // Assuming you want to play the first animation
           action = mixer.clipAction(gltf.animations[0]);
           action.play();
         }
-  
+
         // Initial random target for free swimming
         pickRandomTarget();
       },
       undefined,
       (err) => console.error('Error loading fish model:', err)
     );
-  
+
     // Mouse events
     container.addEventListener('mousedown', () => {
       isMouseDown = true;
@@ -592,71 +590,71 @@
     });
     container.addEventListener('mousemove', (event) => {
       if (!isMouseDown) return; // Only update mouseTarget if mouse is down
-  
+
       const rect = container.getBoundingClientRect();
       mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
       mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
-  
+
       raycaster.setFromCamera(mouse, camera);
       const plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
       const intersection = new THREE.Vector3();
       raycaster.ray.intersectPlane(plane, intersection);
-  
+
       mouseTarget.copy(intersection);
     });
-  
+
     // Main animation loop
     function animate() {
       requestAnimationFrame(animate);
-  
+
       const delta = clock.getDelta();
-  
+
       // Update animation mixer
       if (mixer) {
         mixer.update(delta);
       }
-  
+
       if (fish) {
         // Decide which target: mouseTarget if isMouseDown, else randomTarget
         const activeTarget = isMouseDown ? mouseTarget : randomTarget;
-  
+
         // Smooth turning
         const lookAtMatrix = new THREE.Matrix4();
         lookAtMatrix.lookAt(fish.position, activeTarget, fish.up);
-  
+
         let targetQuat = new THREE.Quaternion().setFromRotationMatrix(lookAtMatrix);
         // Apply offset
         targetQuat.multiply(offsetQuaternion);
         // Slerp to that orientation
         fish.quaternion.slerp(targetQuat, TURN_SPEED);
-  
+
         // Move toward the active target
         const direction = new THREE.Vector3().subVectors(activeTarget, fish.position);
         fish.position.add(direction.normalize().multiplyScalar(FISH_SPEED * delta));
-  
+
         // If mouse not down and fish is going to random target,
         // once it arrives, pick a new random target
         if (!isMouseDown && fish.position.distanceTo(randomTarget) < 0.2) {
           pickRandomTarget();
         }
-  
+
         // Keep fish on screen
         clampToScreen(fish);
       }
-  
+
       renderer.render(scene, camera);
     }
     animate();
-  
+
     // Resize handling
     window.addEventListener('resize', () => {
       camera.aspect = container.clientWidth / container.clientHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(container.clientWidth, container.clientHeight);
     });
-    
+
   </script>
-  
+
 </body>
 
 </html>
