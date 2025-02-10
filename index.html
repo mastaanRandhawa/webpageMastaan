@@ -128,7 +128,7 @@
           <img data-src="imgs/akwrapsimage.png" class="lazyload img-fluid" alt="AK Wraps Website Screenshot"
             loading="lazy">
 
-            
+
           <h3>AK WRAPS WEBSITE</h3>
           <p>
             Designed and built the AK Wraps website using THREEjs, HTML, CSS, Bootstrap,
@@ -372,6 +372,19 @@
     });
   </script>
 
+  <script>
+    // Function to add sticky effect
+    window.addEventListener("scroll", function () {
+      const header = document.querySelector("header");
+      if (window.scrollY > 50) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+
+    });
+
+  </script>
   <!-- Show More/Show Less script for portfolio -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -445,8 +458,7 @@
         "a creative Figma Designer ✏️.",
         "a master of Frameworks: Bootstrap, ReactJS, ThreeJS, SpringBoot 🛠️.",
         "a database Whiz: MongoDB, MySQL, SQL/SQLite 🗃️.",
-        "hands-on with Deployment Tools like Render and AWS ☁️.",
-        "Let's build something amazing together!"
+        "hands-on with Deployment Tools like Render and AWS ☁️."
       ];
 
 

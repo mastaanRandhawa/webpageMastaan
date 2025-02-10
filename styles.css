@@ -51,9 +51,60 @@ section {
   margin-bottom: var(--margin-small) !important;
 }
 
+/* Sticky Header */
 header {
   margin-bottom: var(--margin-large);
   margin-top: var(--margin-large);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity 0.3s ease-in-out, background 0.3s ease-in-out;
+  opacity: 1;
+  /* Default opacity */
+  padding: 15px 20px;
+  z-index: 1000;
+  position: sticky;
+  z-index: 1000;
+}
+
+
+
+/* Sticky effect: Reduce opacity when scrolling */
+header.sticky {
+  opacity: 0.3;
+}
+
+/* Restore full opacity on hover */
+header.sticky:hover {
+  border-radius: 25px;
+  background: var(--color-white);
+  opacity: 1;
+}
+
+/* Ensure navigation stays visible */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Adjust menu items */
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+nav ul li a {
+  color: var(--color-dark);
+  text-decoration: none;
+  font-weight: normal;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: var(--color-primary);
 }
 
 nav {
@@ -316,7 +367,7 @@ label.error {
   height: 200px;
   object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 15px;  
+  margin-bottom: 15px;
 }
 
 .card p {
@@ -730,9 +781,9 @@ input:checked+.slider:before {
   .card img {
     height: 150px;
   }
-  
 
-  
+
+
   .card p {
     font-size: var(--font-size-extraSmall) !important;
   }
