@@ -68,8 +68,6 @@ header {
   z-index: 1000;
 }
 
-
-
 /* Sticky effect: Reduce opacity when scrolling */
 header.sticky {
   opacity: 0.3;
@@ -81,6 +79,7 @@ header.sticky:hover {
   background: var(--color-white);
   opacity: 1;
 }
+
 
 /* Ensure navigation stays visible */
 nav {
