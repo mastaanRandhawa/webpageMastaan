@@ -722,6 +722,8 @@ input:checked+.slider:before {
   }
 }
 
+
+
 /* Extra small devices (phones, less than 576px) */
 @media (min-width: 401px) and (max-width: 575.98px) {
   :root {
