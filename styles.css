@@ -408,8 +408,8 @@ a:hover {
     --margin-small: 16px;
     --margin-medium: 24px;
     --margin-large: 40px;
-    --font-size-small: 14px;
-    --font-size-medium: 18px;
+    --font-size-small: 22px;
+    --font-size-medium: 24px;
     --font-size-large: 28px;
     --font-size-xlarge: 36px;
   }
@@ -438,7 +438,7 @@ a:hover {
     --margin-small: 12px;
     --margin-medium: 20px;
     --margin-large: 36px;
-    --font-size-small: 20px;
+    --font-size-small: 22px;
     --font-size-medium: 28px;
     --font-size-large: 38px;
     --font-size-xlarge: 46px;
@@ -469,7 +469,7 @@ a:hover {
     --margin-medium: 18px;
     --margin-large: 30px;
     --font-size-extraSmall: 10px;
-    --font-size-small: 12px;
+    --font-size-small: 20px;
     --font-size-medium: 16px;
     --font-size-large: 24px;
     --font-size-xlarge: 32px;
@@ -522,7 +522,7 @@ a:hover {
     --margin-medium: 16px;
     --margin-large: 24px;
     --font-size-extraSmall: 6px;
-    --font-size-small: 11px;
+    --font-size-small: 18px;
     --font-size-medium: 15px;
     --font-size-large: 22px;
     --font-size-xlarge: 28px;
@@ -571,7 +571,7 @@ a:hover {
     --margin-medium: 8px;
     --margin-large: 15px;
     --font-size-extraSmall: 4px;
-    --font-size-small: 10px;
+    --font-size-small: 16px;
     --font-size-medium: 14px;
     --font-size-large: 20px;
     --font-size-xlarge: 26px;
@@ -616,11 +616,11 @@ a:hover {
     --padding-small: 4px;
     --padding-medium: 8px;
     --padding-large: 20px;
-    --margin-small: 6px;
-    --margin-medium: 12px;
+    --margin-small: 12px;
+    --margin-medium: 14px;
     --margin-large: 20px;
     --font-size-extraSmall: 4px;
-    --font-size-small: 10px;
+    --font-size-small: 12px;
     --font-size-medium: 14px !important;
     --font-size-large: 20px !important;
     --font-size-xlarge: 26px !important;
