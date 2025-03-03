@@ -33,117 +33,66 @@ section {
   padding: 40px 0;
 }
 
+/* Used in the hero section */
 .hero-content {
-  padding: 20px;
+  padding: 22% var(--padding-small);
 }
 
-.hero .hero-image img {
-  width: 40%;
-  height: auto;
-}
 
-.hero .hero-content p {
-  margin-bottom: var(--margin-large) !important;
-  margin-top: var(--margin-small);
-}
-
-.hero .hero-content h1 {
-  margin-bottom: var(--margin-small) !important;
-}
+/* (Removed unused .hero .hero-image img and .hero .hero-content selectors) */
 
 /* Sticky Header */
 header {
-  margin-bottom: var(--margin-large);
-  margin-top: var(--margin-large);
+  margin: var(--margin-large) 0;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  padding: 15px 20px;
   transition: opacity 0.3s ease-in-out, background 0.3s ease-in-out;
   opacity: 1;
-  /* Default opacity */
-  padding: 15px 20px;
   z-index: 1000;
-  position: sticky;
-  z-index: 1000;
+  /* Using sticky via JS by toggling the class */
 }
 
-/* Sticky effect: Reduce opacity when scrolling */
 header.sticky {
   opacity: 0.3;
 }
 
-/* Restore full opacity on hover */
 header.sticky:hover {
   border-radius: 25px;
   background: var(--color-white);
   opacity: 1;
 }
 
-
-/* Ensure navigation stays visible */
+/* Navigation – merged duplicate nav rules */
 nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 10px;
+  flex-wrap: wrap;
 }
 
-/* Adjust menu items */
 nav ul {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
   list-style: none;
 }
-
-
 
 nav ul li a {
   color: var(--color-dark);
   text-decoration: none;
   font-weight: normal;
   transition: color 0.3s;
-}
-
-nav ul li a:hover {
-  color: var(--color-primary);
-}
-
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  list-style-type: none;
-}
-
-nav ul li a {
   padding-left: var(--padding-medium);
   padding-right: var(--padding-medium);
 }
 
-ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  list-style-type: none;
-}
-
-ul li a,
-ul li {
-  font-size: var(--font-size-small);
-  padding-left: var(--padding-small);
-  padding-right: var(--padding-small);
-}
-
-.architects-daughter-regular {
-  font-family: "Architects Daughter", cursive;
-  font-weight: 400;
-  font-style: normal;
+nav ul li a:hover {
+  color: var(--color-primary);
 }
 
 /* Typography */
@@ -165,7 +114,6 @@ textarea {
 
 .form-group input,
 .form-group textarea {
-  /* background-color: var(--color-white); */
   border: 1px var(--color-lowdark) solid;
   margin-top: var(--margin-small);
   width: 100%;
@@ -204,11 +152,8 @@ textarea {
   padding-right: 0;
   border-radius: 0;
   width: 100%;
-  /* Makes form fields take up full width */
   box-sizing: border-box;
-  /* Ensures padding doesn't affect width */
 }
-
 
 .btn,
 .form-control {
@@ -219,6 +164,7 @@ form .row .form-group {
   width: 100%;
 }
 
+/* Layout for main sections */
 #contact,
 #about,
 #resume {
@@ -229,9 +175,10 @@ form .row .form-group {
 
 #portfolio {
   border-radius: 25px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   width: 95%;
+  text-align: center;
+  padding: 60px 20px;
 }
 
 #form-message-warning,
@@ -249,10 +196,6 @@ form .row .form-group {
   font-weight: bold;
 }
 
-#resume ul {
-  padding: 0;
-}
-
 #resume {
   text-align: center;
   padding: 60px 20px;
@@ -265,19 +208,10 @@ form .row .form-group {
   font-size: 1rem;
 }
 
-.resumeUL {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  text-align: left;
-}
+/* (Removed unused #resume ul, .resumeUL, and .resumeLI) */
 
-.resumeLI {
-  margin-bottom: 10px;
-  line-height: 1.6;
-  text-align: left;
-  font-size: var(--font-size-small);
-}
+
+
 
 .btn-primary {
   background-color: var(--color-dark);
@@ -299,34 +233,14 @@ form .row .form-group {
   border: 1px var(--color-dark) solid;
 }
 
-label.error {
-  font-size: var(--font-size-small);
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: red;
-}
+/* (Removed label.error and .submitting rules) */
 
 #message {
   min-height: 250px;
-  /* Ensures a larger starting height */
   resize: vertical;
-  /* Allows the user to resize if needed */
 }
 
-.submitting {
-  float: left;
-  width: 100%;
-  padding: var(--padding-extrasmall) 0;
-  display: none;
-  font-weight: bold;
-  font-size: var(--font-size-small);
-  color: #000;
-}
-
-#portfolio {
-  text-align: center;
-  padding: 60px 20px;
-}
-
+/* Portfolio Section */
 #portfolio h2 {
   padding-bottom: var(--padding-large);
 }
@@ -349,7 +263,6 @@ label.error {
   border: 1px solid var(--color-dark);
   transition: 0.5s;
   text-align: center;
-  /* Aligns text to the left */
 }
 
 .card:hover {
@@ -388,6 +301,27 @@ label.error {
   margin-top: 10px;
 }
 
+.cardList {
+  width: 80%;
+  display: flex;
+  gap: 5%;
+  /* Adjust the gap value as needed */
+  padding: 2%;
+  padding-bottom: var(--padding-small);
+  padding-top: var(--padding-medium);
+}
+
+
+.cardList li {
+  list-style: none;
+}
+
+.cardList li img {
+  width: 40px;
+  height: 40px;
+  transition: 0.5s;
+}
+
 .hidden {
   display: none !important;
 }
@@ -417,13 +351,6 @@ a:hover {
   }
 }
 
-/* General nav styling */
-nav {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-}
-
 /* Burger Menu Styling */
 .burger {
   display: none;
@@ -433,67 +360,14 @@ nav {
   cursor: pointer;
 }
 
-/* The switch - the box around the slider */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  border: 1px #ccc solid;
-  transition: 0.4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  transition: 0.4s;
-}
-
-input:checked+.slider {
-  background-color: #2c3e50;
-}
-
-input:focus+.slider {
-  box-shadow: 0 0 1px #2c3e50;
-}
-
-input:checked+.slider:before {
-  transform: translateX(26px);
-}
-
 /* Menu styling */
 #menu {
   display: flex;
   gap: 20px;
   list-style-type: none;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
 }
 
-/* Hide menu items by default on small screens */
 @media (max-width: 768px) {
   .burger {
     display: block;
@@ -521,30 +395,26 @@ input:checked+.slider:before {
   }
 }
 
-/* Show menu by default on larger screens */
 @media (min-width: 769px) {
   #menu {
     display: flex;
   }
 }
 
-/* Extra large devices (large desktops, 1200px and up) */
+/* Responsive Typography & Spacing for Navigation and Forms */
 @media (min-width: 1200px) {
   :root {
     --padding-extraSmall: 12px;
     --padding-small: 16px;
     --padding-medium: 24px;
     --padding-large: 40px;
-
     --margin-small: 16px;
     --margin-medium: 24px;
     --margin-large: 40px;
-
-    --font-size-small: 14px;
-    --font-size-medium: 18px;
+    --font-size-small: 22px;
+    --font-size-medium: 24px;
     --font-size-large: 28px;
     --font-size-xlarge: 36px;
-
   }
 
   .form-group input,
@@ -553,31 +423,28 @@ input:checked+.slider:before {
     margin-top: var(--margin-small);
   }
 
-  ul li a,
-  ul li {
+  nav ul li a,
+  nav ul li {
     font-size: var(--font-size-extraSmall);
-    padding-left: var(--padding-extrasmall);
-    padding-right: var(--padding-extrasmall);
+    padding-left: var(--padding-extraSmall);
+    padding-right: var(--padding-extraSmall);
   }
+
 }
 
-/* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   :root {
     --padding-extraSmall: 8px;
     --padding-small: 12px;
     --padding-medium: 20px;
     --padding-large: 36px;
-
     --margin-small: 12px;
     --margin-medium: 20px;
     --margin-large: 36px;
-
-    --font-size-small: 20px;
+    --font-size-small: 22px;
     --font-size-medium: 28px;
     --font-size-large: 38px;
     --font-size-xlarge: 46px;
-
   }
 
   .form-group input,
@@ -586,31 +453,29 @@ input:checked+.slider:before {
     margin-top: var(--margin-small);
   }
 
-  ul li a,
-  ul li {
+  nav ul li a,
+  nav ul li {
     font-size: var(--font-size-extraSmall);
-    padding-left: var(--padding-extrasmall);
-    padding-right: var(--padding-extrasmall);
+    padding-left: var(--padding-extraSmall);
+    padding-right: var(--padding-extraSmall);
   }
+
 }
 
-/* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
   :root {
     --padding-extraSmall: 8px;
     --padding-small: 10px;
     --padding-medium: 18px;
     --padding-large: 30px;
-
     --margin-small: 10px;
     --margin-medium: 18px;
     --margin-large: 30px;
-
-    --font-size-extraSmall: 10px --font-size-small: 12px;
+    --font-size-extraSmall: 10px;
+    --font-size-small: 20px;
     --font-size-medium: 16px;
     --font-size-large: 24px;
     --font-size-xlarge: 32px;
-
   }
 
   form.border-right {
@@ -626,22 +491,11 @@ input:checked+.slider:before {
 
   #contact,
   #about,
-  #resume {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-  }
-
-  #portfolio {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-  }
-
+  #resume,
+  #portfolio,
   body {
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
+    width: 100%;
+    margin: auto;
     border: none;
   }
 
@@ -649,66 +503,48 @@ input:checked+.slider:before {
     height: 250px;
   }
 
-  ul li a,
-  ul li {
+  nav ul li a,
+  nav ul li {
     font-size: var(--font-size-extraSmall);
-    padding-left: var(--padding-extrasmall);
-    padding-right: var(--padding-extrasmall);
+    padding-left: var(--padding-extraSmall);
+    padding-right: var(--padding-extraSmall);
+  }
+
+  .cardList {
+    width: 45%;
   }
 }
 
-/* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
   :root {
     --padding-extraSmall: 4px;
     --padding-small: 6px;
     --padding-medium: 12px;
     --padding-large: 24px;
-
     --margin-small: 8px;
     --margin-medium: 16px;
     --margin-large: 24px;
-
-    --font-size-extraSmall: 6px --font-size-small: 11px;
+    --font-size-extraSmall: 6px;
+    --font-size-small: 18px;
     --font-size-medium: 15px;
     --font-size-large: 22px;
     --font-size-xlarge: 28px;
-
   }
 
-  /* Contact Form Styling */
-  .form-control {
-    width: 100%;
-  }
-
-  form.border-right {
-    padding-right: 1rem !important;
-  }
-
+  .form-control,
+  form.border-right,
   .form-group input,
   .form-group textarea {
-    border: 1px var(--color-lowdark) solid;
-    margin-top: var(--margin-small);
+    width: 100%;
   }
 
   #contact,
   #about,
-  #resume {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-  }
-
-  #portfolio {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-  }
-
+  #resume,
+  #portfolio,
   body {
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
+    width: 100%;
+    margin: auto;
     border: none;
   }
 
@@ -716,66 +552,48 @@ input:checked+.slider:before {
     height: 200px;
   }
 
-  ul li a,
-  ul li {
+  nav ul li a,
+  nav ul li {
     font-size: var(--font-size-extraSmall);
-    padding-left: var(--padding-extrasmall);
-    padding-right: var(--padding-extrasmall);
+    padding-left: var(--padding-extraSmall);
+    padding-right: var(--padding-extraSmall);
+  }
+
+  .cardList {
+    width: 40%;
   }
 }
 
-/* Extra small devices (phones, less than 576px) */
 @media (min-width: 401px) and (max-width: 575.98px) {
   :root {
     --padding-extraSmall: 1px;
     --padding-small: 3px;
     --padding-medium: 6px;
     --padding-large: 15px;
-
     --margin-small: 4px;
     --margin-medium: 8px;
     --margin-large: 15px;
-
-    --font-size-extraSmall: 4px --font-size-small: 10px;
+    --font-size-extraSmall: 4px;
+    --font-size-small: 16px;
     --font-size-medium: 14px;
     --font-size-large: 20px;
     --font-size-xlarge: 26px;
-
   }
 
-  /* Contact Form Styling */
-  .form-control {
-    width: 100%;
-  }
-
-  form.border-right {
-    padding-right: 1rem !important;
-  }
-
+  .form-control,
+  form.border-right,
   .form-group input,
   .form-group textarea {
-    border: 1px var(--color-lowdark) solid;
-    margin-top: var(--margin-small);
+    width: 100%;
   }
 
   #contact,
   #about,
-  #resume {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-  }
-
-  #portfolio {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-  }
-
+  #resume,
+  #portfolio,
   body {
-    margin-left: auto;
-    margin-right: auto;
     width: 90%;
+    margin: auto;
     border: none;
   }
 
@@ -783,71 +601,48 @@ input:checked+.slider:before {
     height: 150px;
   }
 
-
-
-  .card p {
-    font-size: var(--font-size-extraSmall) !important;
+  nav ul li a,
+  nav ul li {
+    font-size: var(--font-size-extraSmall);
+    padding-left: var(--padding-extraSmall);
+    padding-right: var(--padding-extraSmall);
   }
 
-  ul li a,
-  ul li {
-    font-size: var(--font-size-extraSmall);
-    padding-left: var(--padding-extrasmall);
-    padding-right: var(--padding-extrasmall);
+  .cardList {
+    width: 90%;
   }
 }
 
-/* Extra small devices (phones, less than 576px) */
 @media (max-width: 400px) {
   :root {
     --padding-extraSmall: 2px;
     --padding-small: 4px;
     --padding-medium: 8px;
     --padding-large: 20px;
-
-    --margin-small: 6px;
-    --margin-medium: 12px;
+    --margin-small: 12px;
+    --margin-medium: 14px;
     --margin-large: 20px;
-
-    --font-size-extraSmall: 4px --font-size-small: 10px;
+    --font-size-extraSmall: 4px;
+    --font-size-small: 12px;
     --font-size-medium: 14px !important;
     --font-size-large: 20px !important;
     --font-size-xlarge: 26px !important;
   }
 
-  /* Contact Form Styling */
-  .form-control {
-    width: 100%;
-  }
-
-  form.border-right {
-    padding-right: 1rem !important;
-  }
-
+  .form-control,
+  form.border-right,
   .form-group input,
   .form-group textarea {
-    border: 1px var(--color-lowdark) solid;
-    margin-top: var(--margin-small);
+    width: 100%;
   }
 
   #contact,
   #about,
-  #resume {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-  }
-
-  #portfolio {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-  }
-
+  #resume,
+  #portfolio,
   body {
-    margin-left: auto;
-    margin-right: auto;
     width: 90%;
+    margin: auto;
     border: none;
   }
 
@@ -855,14 +650,14 @@ input:checked+.slider:before {
     height: 150px;
   }
 
-  .card p {
-    font-size: var(--font-size-extraSmall) !important;
+  nav ul li a,
+  nav ul li {
+    font-size: var(--font-size-extraSmall);
+    padding-left: var(--padding-extraSmall);
+    padding-right: var(--padding-extraSmall);
   }
 
-  ul li a,
-  ul li {
-    font-size: var(--font-size-extraSmall);
-    padding-left: var(--padding-extrasmall);
-    padding-right: var(--padding-extrasmall);
+  .cardList {
+    width: 90%;
   }
 }
