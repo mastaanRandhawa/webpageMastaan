@@ -211,8 +211,6 @@ form .row .form-group {
 /* (Removed unused #resume ul, .resumeUL, and .resumeLI) */
 
 
-
-
 .btn-primary {
   background-color: var(--color-dark);
   color: var(--color-light);
