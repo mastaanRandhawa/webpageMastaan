@@ -414,7 +414,6 @@ a:hover {
     --font-size-large: 28px;
     --font-size-xlarge: 36px;
   }
-
   .form-group input,
   .form-group textarea {
     border: 1px var(--color-lowdark) solid;
