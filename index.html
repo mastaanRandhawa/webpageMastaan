@@ -21,10 +21,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=open_in_new" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=open_in_new,arrow_forward,download,mail" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -51,61 +51,56 @@
     <nav>
       <button class="burger" onclick="toggleMenu()">☰</button>
       <ul id="menu">
-        <li><a href="#portfolio">PORTFOLIO</a></li>
-        <li><a href="#about">ABOUT</a></li>
-        <li><a href="#resume">RESUME</a></li>
-        <li><a href="#contact">CONTACT</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#resume">Resume</a></li>
       </ul>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+        <svg id="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.24-4.4 2.24-2.98 0-5.4-2.42-5.4-5.4 0-1.81.87-3.41 2.24-4.4-.44-.06-.9-.1-1.36-.1z" />
+        </svg>
+      </button>
     </nav>
   </header>
 
-  <!-- Intro Section -->
-  <section class="py-5">
+  <!-- Hero Section -->
+  <section class="hero-section">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="hero-content">
-          <h1>Hi, I am Mastaan Randhawa.</h1>
-          <p>I am <span class="typewriter-text typeWriterspan"></span></p>
+      <div class="hero-content">
+        <h1>Hi, I'm Mastaan Randhawa</h1>
+        <p class="typewriter-text typeWriterspan"></p>
+        <p class="hero-description">A passionate Software Developer and Computer Science student at Simon Fraser
+          University, turning ideas into digital reality.</p>
 
-          <a href="#portfolio">
-            <input type="submit" value="Explore" class="btn btn-primary rounded-0 py-2 px-4">
+        <div class="hero-actions">
+          <a href="#portfolio" class="btn btn-primary">
+            View My Work
+            <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+            </svg>
           </a>
-          <!-- Social Links -->
-          <div class="social-links mt-4">
-            <!-- Inline SVG for GitHub -->
-            <a href="https://github.com/mastaanRandhawa" target="_blank" style="margin-right: 10px;">
-              <svg class="imglogo" width="32" height="32" viewBox="0 0 24 24" fill="#2c3e50"
-                xmlns="http://www.w3.org/2000/svg" aria-label="GitHub Logo">
-                <path d="M12 .297c-6.626 0-12 5.373-12 12 
-                         0 5.303 3.438 9.8 8.205 11.385.599.113.82-.26.82-.577 
-                         0-.285-.01-1.04-.016-2.04-3.338.726-4.042-1.61-4.042-1.61 
-                         -.546-1.387-1.333-1.757-1.333-1.757-1.089-.744.084-.729.084-.729 
-                         1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.304 3.495.997 
-                         .108-.776.418-1.305.76-1.605-2.665-.305-5.466-1.333-5.466-5.93 
-                         0-1.31.469-2.381 1.236-3.221-.124-.304-.536-1.527.117-3.176 
-                         0 0 1.008-.322 3.301 1.23a11.52 11.52 0 0 1 3.003-.404 
-                         c1.018.005 2.042.138 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23 
-                         .655 1.649.243 2.872.119 3.176.77.84 1.236 1.911 1.236 3.221 
-                         0 4.61-2.805 5.622-5.476 5.92.43.372.81 1.102.81 2.222 
-                         0 1.604-.014 2.897-.014 3.293 0 .319.217.694.824.576 
-                         4.765-1.587 8.2-6.082 8.2-11.384 0-6.627-5.373-12-12-12z" />
-              </svg>
-            </a>
-            <!-- Inline SVG for LinkedIn -->
-            <a href="https://linkedin.com/in/MastaanRandhawa" target="_blank">
-              <svg class="imglogo" width="32" height="32" viewBox="0 0 24 24" fill="#2c3e50"
-                xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn Logo">
-                <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14 
-                         c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14 
-                         c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.27 
-                         c-.97 0-1.75-.79-1.75-1.76s.78-1.75 
-                         1.75-1.75 1.75.78 1.75 1.75 
-                         -.78 1.76-1.75 1.76zm12.5 11.27h-3v-5.6c0-1.34 
-                         -.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.88v1.37h.04 
-                         c.4-.75 1.38-1.54 2.83-1.54 3.03 0 3.59 2 3.59 4.53v5.64z" />
-              </svg>
-            </a>
-          </div>
+          <a href="#contact" class="btn btn-secondary">
+            Get In Touch
+          </a>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-links">
+          <a href="https://github.com/mastaanRandhawa" target="_blank" aria-label="GitHub">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 .297c-6.626 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.599.113.82-.26.82-.577 0-.285-.01-1.04-.016-2.04-3.338.726-4.042-1.61-4.042-1.61 -.546-1.387-1.333-1.757-1.333-1.757-1.089-.744.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.304 3.495.997 .108-.776.418-1.305.76-1.605-2.665-.305-5.466-1.333-5.466-5.93 0-1.31.469-2.381 1.236-3.221-.124-.304-.536-1.527.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 0 1 3.003-.404 c1.018.005 2.042.138 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23 .655 1.649.243 2.872.119 3.176.77.84 1.236 1.911 1.236 3.221 0 4.61-2.805 5.622-5.476 5.92.43.372.81 1.102.81 2.222 0 1.604-.014 2.897-.014 3.293 0 .319.217.694.824.576 4.765-1.587 8.2-6.082 8.2-11.384 0-6.627-5.373-12-12-12z" />
+            </svg>
+          </a>
+          <a href="https://linkedin.com/in/MastaanRandhawa" target="_blank" aria-label="LinkedIn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19 0h-14c-2.76 0-5 2.24-5 5v14 c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14 c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.27 c-.97 0-1.75-.79-1.75-1.76s.78-1.75 1.75-1.75 1.75.78 1.75 1.75 -.78 1.76-1.75 1.76zm12.5 11.27h-3v-5.6c0-1.34 -.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.88v1.37h.04 c.4-.75 1.38-1.54 2.83-1.54 3.03 0 3.59 2 3.59 4.53v5.64z" />
+            </svg>
+          </a>
         </div>
       </div>
     </div>
@@ -116,15 +111,16 @@
   <!-- Portfolio Section -->
   <section class="portfolioBG">
     <section id="portfolio">
-      <!-- Web Development Section -->
-      <h2>PORTFOLIO</h2>
+      <h2>My Work</h2>
+      <p class="section-description">A collection of projects showcasing my skills in web development, system
+        programming, and software engineering.</p>
       <div class="portfolio-items web-portfolio">
 
         <!-- AK WRAPS WEBSITE (THREE.js, HTML, CSS, Bootstrap, JavaScript) -->
         <div class="card">
           <img data-src="imgs/akwrapsimage.png" class="lazyload img-fluid" alt="AK Wraps Website Screenshot"
             loading="lazy">
-          <h3>AK WRAPS WEBSITE</h3>
+          <h3>AK Wraps Website</h3>
           <ul class="cardList">
             <li>
               <img src="imgs/threejslogo.svg" alt="Three.js logo">
@@ -140,18 +136,23 @@
             </li>
           </ul>
           <p>
-            Designed and built the AK Wraps website using THREEjs, HTML, CSS, Bootstrap,
-            and JavaScript, creating an engaging and responsive user experience.
+            Built AK Wraps website with THREEjs 3D elements, HTML5, CSS3, Bootstrap 5, and JavaScript ES6+.
+            Features lazy loading, performance optimization, and smooth animations.
           </p>
-          <a href="https://akwraps.ca/landingPage" target="_blank">
-            <span class="material-symbols-outlined">open_in_new</span>
-          </a>
+          <div class="project-links">
+            <a href="https://akwraps.ca/landingPage" target="_blank" class="project-link">
+              <svg class="card-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
+              </svg>
+            </a>
+          </div>
         </div>
 
         <!-- RISC-V PROCESSOR (C/C++/Assembly) -->
         <div class="card">
           <img data-src="imgs/coding.webp" class="lazyload img-fluid" alt="RISC-V Processor Screenshot" loading="lazy">
-          <h3>RISC-V PROCESSOR</h3>
+          <h3>RISC-V Processor</h3>
           <ul class="cardList">
             <li>
               <img src="imgs/clogo.svg" alt="C logo">
@@ -161,8 +162,8 @@
             </li>
           </ul>
           <p>
-            Developed a RISC-V processor in C/C++/Assembly, implementing RISC-V instructions with custom slt-type
-            instructions.
+            RISC-V processor implementation in C/C++/Assembly with custom slt-type instructions,
+            register management, and instruction decoding. Includes pipelining optimization and memory management.
           </p>
         </div>
 
@@ -170,15 +171,15 @@
         <div class="card">
           <img data-src="imgs/coding.webp" class="lazyload img-fluid" alt="Custom ls Command Project Screenshot"
             loading="lazy">
-          <h3>LS IMPLEMENTATION</h3>
+          <h3>LS Command Implementation</h3>
           <ul class="cardList">
             <li>
               <img src="imgs/clogo.svg" alt="C logo">
             </li>
           </ul>
           <p>
-            Developed a custom `ls` command in C, mimicking Unix's ls utility with options for inode display and
-            long-format listing.
+            Custom `ls` command implementation in C, mimicking Unix's ls utility with inode display
+            and long-format listing options.
           </p>
         </div>
 
@@ -186,7 +187,7 @@
         <div class="card">
           <img data-src="imgs/coding.webp" class="lazyload img-fluid" alt="Multi-level Cache System Screenshot"
             loading="lazy">
-          <h3>LEVELED CACHE SYSTEM</h3>
+          <h3>Multi-Level Cache System</h3>
           <ul class="cardList">
             <li>
               <img src="imgs/clogo.svg" alt="C logo">
@@ -196,7 +197,8 @@
             </li>
           </ul>
           <p>
-            Developed and managed multiple cache projects using C/C++. Implemented LRU and LFU eviction policies.
+            Multi-level cache system in C/C++ with LRU and LFU eviction policies.
+            Implemented efficient memory management and cache optimization techniques.
           </p>
         </div>
 
@@ -204,15 +206,15 @@
         <div class="card">
           <img data-src="imgs/coding.webp" class="lazyload img-fluid" alt="Concurrent Data Communication Screenshot"
             loading="lazy">
-          <h3>DATA COMMUNICATION</h3>
+          <h3>Concurrent Data Communication</h3>
           <ul class="cardList">
             <li>
               <img src="imgs/clogo.svg" alt="C logo">
             </li>
           </ul>
           <p>
-            Created a framework for concurrent data communication in C, using mutex locks to ensure thread-safe
-            operations.
+            Concurrent data communication framework in C using mutex locks for thread-safe operations.
+            Implements secure multi-threading and synchronization mechanisms.
           </p>
         </div>
 
@@ -220,14 +222,15 @@
         <div class="card">
           <img data-src="imgs/coding.webp" class="lazyload img-fluid" alt="Inter-Process Communication Screenshot"
             loading="lazy">
-          <h3>IPC IMPLEMENTATION</h3>
+          <h3>IPC Implementation</h3>
           <ul class="cardList">
             <li>
               <img src="imgs/clogo.svg" alt="C logo">
             </li>
           </ul>
           <p>
-            Built an architecture for IPC and global variable management in C. Supports POSIX IPC mechanisms.
+            IPC architecture in C with global variable management. Supports POSIX IPC mechanisms
+            and inter-process communication protocols.
           </p>
         </div>
 
@@ -235,7 +238,7 @@
         <div class="card">
           <img data-src="imgs/ferrariWebsite.png" class="lazyload img-fluid" alt="Ferrari Website Screenshot"
             loading="lazy">
-          <h3>FERRARI WEBSITE</h3>
+          <h3>Ferrari Website</h3>
           <ul class="cardList">
             <li>
               <img src="imgs/htmllogo.svg" alt="HTML logo">
@@ -251,19 +254,24 @@
             </li>
           </ul>
           <p>
-            Developed a custom Ferrari-themed website, showcasing my front-end development skills
-            through an elegant and dynamic design.
+            Ferrari-themed website showcasing front-end development skills with HTML, CSS, JavaScript,
+            and Bootstrap. Features elegant design and dynamic user interactions.
           </p>
-          <a href="https://mastaanrandhawa.github.io/Ferrari-Website/" target="_blank">
-            <span class="material-symbols-outlined">open_in_new</span>
-          </a>
+          <div class="project-links">
+            <a href="https://mastaanrandhawa.github.io/Ferrari-Website/" target="_blank" class="project-link">
+              <svg class="card-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
+              </svg>
+            </a>
+          </div>
         </div>
 
         <!-- ROAR BIKE WEBSITE (HTML, CSS, JavaScript, Bootstrap) -->
         <div class="card">
           <img data-src="imgs/roarcycle.png" class="lazyload img-fluid" alt="Roar Cycle Website Screenshot"
             loading="lazy">
-          <h3>ROAR BIKE WEBSITE</h3>
+          <h3>Roar Cycle Website</h3>
           <ul class="cardList">
             <li>
               <img src="imgs/htmllogo.svg" alt="HTML logo">
@@ -279,18 +287,21 @@
             </li>
           </ul>
           <p>
-            Developed a mobile bike repair service website, emphasizing user-friendly design
-            and streamlined booking to enhance customer convenience.
+            Mobile bike repair service website with user-friendly design and streamlined booking system.
+            Built with HTML, CSS, JavaScript, and Bootstrap for enhanced customer convenience.
           </p>
           <a href="https://mastaanrandhawa.github.io/Roar-Cycle/" target="_blank">
-            <span class="material-symbols-outlined">open_in_new</span>
+            <svg class="card-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
+            </svg>
           </a>
         </div>
 
         <!-- LOGO WEBSITE (HTML, CSS, JavaScript, Bootstrap) -->
         <div class="card">
           <img data-src="imgs/logoWebsite.png" class="lazyload img-fluid" alt="Logo Website Screenshot" loading="lazy">
-          <h3>LOGO WEBSITE</h3>
+          <h3>Logo Design Website</h3>
           <ul class="cardList">
             <li>
               <img src="imgs/htmllogo.svg" alt="HTML logo">
@@ -306,110 +317,324 @@
             </li>
           </ul>
           <p>
-            Developed a professional logo design site, demonstrating expertise in creating seamless user experiences.
+            Professional logo design website demonstrating expertise in creating seamless user experiences.
+            Features modern UI/UX design with HTML, CSS, JavaScript, and Bootstrap.
           </p>
           <a href="https://mastaanrandhawa.github.io/Logo-Design-Website/" target="_blank">
-            <span class="material-symbols-outlined">open_in_new</span>
+            <svg class="card-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
+            </svg>
           </a>
         </div>
 
       </div>
 
-      <button id="show-more-web" class="btn btn-primary mt-4">Show More</button>
+      <button id="show-more-web" class="btn btn-primary mt-4">Show More Projects</button>
       <a href="#portfolio">
-        <button id="hide-web" class="btn btn-primary mt-4 hidden">Back</button>
+        <button id="hide-web" class="btn btn-primary mt-4 hidden">Show Less</button>
       </a>
 
     </section>
   </section>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>ABOUT ME</h2>
-    <!-- 3D Scene Container -->
-    <div id="three-container" style="width: 100%; height: 500px; position: relative;">
-      <!-- The 3D canvas will be appended here via JavaScript -->
-    </div>
-    <p> From a small town in India to the bustling tech scene of Canada, my journey has been anything but ordinary. I’m
-      Mastaan Randhawa—a Software Developer and Computer Science student at Simon Fraser University with a passion for
-      turning challenges into opportunities. My ambition extends beyond coding; I aspire to travel the world, aiding
-      those in need, and eventually venturing into tech sales.</p>
+  <!-- Skills Section -->
+  <section id="skills">
+    <div class="container">
+      <h2>Technical Skills</h2>
+      <p class="section-description">A comprehensive overview of my technical expertise across different domains.</p>
 
+      <div class="skills-container">
+        <!-- Frontend Skills -->
+        <div class="skill-category">
+          <h3>Frontend Development</h3>
+          <div class="skill-items">
+            <div class="skill-ball">
+              <span class="skill-name">HTML5</span>
+            </div>
+            <div class="skill-ball">
+              <span class="skill-name">CSS3</span>
+            </div>
+            <div class="skill-ball">
+              <span class="skill-name">JavaScript</span>
+            </div>
+            <div class="skill-ball">
+              <span class="skill-name">React.js</span>
+            </div>
+            <div class="skill-ball">
+              <span class="skill-name">Three.js</span>
+            </div>
+            <div class="skill-ball">
+              <span class="skill-name">Bootstrap</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Backend Skills -->
+        <div class="skill-category">
+          <h3>Backend & System Programming</h3>
+          <div class="skill-items">
+            <div class="skill-ball">
+              <span class="skill-name">C/C++</span>
+            </div>
+            <div class="skill-ball">
+              <span class="skill-name">Assembly</span>
+            </div>
+            <div class="skill-ball">
+              <span class="skill-name">Node.js</span>
+            </div>
+            <div class="skill-ball">
+              <span class="skill-name">Python</span>
+            </div>
+            <div class="skill-ball">
+              <span class="skill-name">Spring Boot</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Database & Tools -->
+        <div class="skill-category">
+          <h3>Database & Tools</h3>
+          <div class="skill-items">
+            <div class="skill-ball">
+              <span class="skill-name">MongoDB</span>
+            </div>
+            <div class="skill-ball">
+              <span class="skill-name">MySQL</span>
+            </div>
+            <div class="skill-ball">
+              <span class="skill-name">Docker</span>
+            </div>
+            <div class="skill-ball">
+              <span class="skill-name">Git/GitHub</span>
+            </div>
+            <div class="skill-ball">
+              <span class="skill-name">AWS</span>
+            </div>
+            <div class="skill-ball">
+              <span class="skill-name">Figma</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Resume Section -->
-  <section id="resume">
-    <h2>RESUME</h2>
-    <a href="ResumeMay2025Tech.pdf" target="_blank">
-      <input type="submit" value="View Resume" class="btn btn-primary">
-    </a>
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>I'm Mastaan Randhawa, a Software Developer at Simon Fraser University, passionate about using technology to
+            create meaningful change. I hope to keep expanding my skills, meet people from different walks of life, and
+            one day explore how tech and sales can come together to help others.</p>
+          <div class="skills-highlight">
+            <h3>What I Do</h3>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <svg class="skill-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" />
+                </svg>
+                <span>System Programming</span>
+              </div>
+              <div class="skill-item">
+                <svg class="skill-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                </svg>
+                <span>Web Development</span>
+              </div>
+              <div class="skill-item">
+                <svg class="skill-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+                <span>UI/UX Design</span>
+              </div>
+              <div class="skill-item">
+                <svg class="skill-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z" />
+                </svg>
+                <span>Performance Optimization</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="about-visual">
+          <div id="three-container">
+          </div>
+        </div> -->
+      </div>
+    </div>
   </section>
 
   <!-- Contact Section -->
   <section id="contact">
-    <h2>CONTACT ME</h2>
-    <p>If you’d like to get in touch, drop me an email using the form below.</p>
-    <form class="border-right pr-5 mb-5" id="contactForm">
-      <div class="row">
-        <div class="col-md-6 form-group">
-          <input type="text" class="form-control" name="fname" id="fname" placeholder="First name" required />
+    <div class="container">
+      <h2>Get In Touch</h2>
+      <p class="section-description">Have a project in mind or want to collaborate? I'd love to hear from you!</p>
+
+      <div class="contact-content">
+        <div class="contact-info">
+          <h3>Let's Connect</h3>
+          <p>I'm always interested in new opportunities and exciting projects. Whether you have a question, want to
+            collaborate, or just want to say hi, feel free to reach out!</p>
+
+          <div class="contact-methods">
+            <div class="contact-method">
+              <svg class="contact-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+              </svg>
+              <div>
+                <h4>Email</h4>
+                <p>mastaanrandhawa@gmail.com</p>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <svg class="contact-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M19 0h-14c-2.76 0-5 2.24-5 5v14 c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14 c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.27 c-.97 0-1.75-.79-1.75-1.76s.78-1.75 1.75-1.75 1.75.78 1.75 1.75 -.78 1.76-1.75 1.76zm12.5 11.27h-3v-5.6c0-1.34 -.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.88v1.37h.04 c.4-.75 1.38-1.54 2.83-1.54 3.03 0 3.59 2 3.59 4.53v5.64z" />
+              </svg>
+              <div>
+                <h4>LinkedIn</h4>
+                <p>Connect with me professionally</p>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <svg class="contact-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .297c-6.626 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.599.113.82-.26.82-.577 0-.285-.01-1.04-.016-2.04-3.338.726-4.042-1.61-4.042-1.61 -.546-1.387-1.333-1.757-1.333-1.757-1.089-.744.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.304 3.495.997 .108-.776.418-1.305.76-1.605-2.665-.305-5.466-1.333-5.466-5.93 0-1.31.469-2.381 1.236-3.221-.124-.304-.536-1.527.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 0 1 3.003-.404 c1.018.005 2.042.138 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23 .655 1.649.243 2.872.119 3.176.77.84 1.236 1.911 1.236 3.221 0 4.61-2.805 5.622-5.476 5.92.43.372.81 1.102.81 2.222 0 1.604-.014 2.897-.014 3.293 0 .319.217.694.824.576 4.765-1.587 8.2-6.082 8.2-11.384 0-6.627-5.373-12-12-12z" />
+              </svg>
+              <div>
+                <h4>GitHub</h4>
+                <p>Check out my code repositories</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-md-6 form-group">
-          <input type="text" class="form-control" name="lname" id="lname" placeholder="Last name" required />
-        </div>
+
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+            </svg>
+            Send Message
+          </button>
+        </form>
       </div>
-      <div class="row">
-        <div class="col-md-12 form-group">
-          <input type="email" class="form-control" name="email" id="email" placeholder="Email" required />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12 form-group">
-          <textarea class="form-control" name="message" id="message" cols="30" rows="25" placeholder="Message"
-            required></textarea>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <button type="submit" class="btn btn-primary">Send Message</button>
-        </div>
-      </div>
-    </form>
-    <div id="form-message-warning mt-4"></div>
-    <div id="form-message-success">Your message was sent, thank you!</div>
+    </div>
   </section>
+
+  <!-- Resume Section -->
+  <section id="resume">
+    <div class="container">
+      <h2>Resume</h2>
+      <p class="section-description">Download my latest resume to learn more about my experience, skills, and
+        achievements.</p>
+      <div class="resume-actions">
+        <a href="ResumeMay2025Tech.pdf" target="_blank" class="btn btn-primary">
+          <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+          </svg>
+          Download Resume
+        </a>
+        <a href="mailto:mastaanrandhawa@gmail.com" class="btn btn-secondary">
+          <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+          </svg>
+          Contact Me
+        </a>
+      </div>
+    </div>
+  </section>
+
 
   <!-- Footer Section -->
   <footer>
-    <p>&copy; 2024 Mastaan Randhawa. All rights reserved.</p>
+    <div class="footer-social">
+      <a href="mailto:mastaanrandhawa@gmail.com" target="_blank">
+        <svg class="imglogo" width="32" height="32" viewBox="0 0 24 24" fill="#2c3e50"
+          xmlns="http://www.w3.org/2000/svg" aria-label="Email Logo">
+          <path
+            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+        </svg>
+      </a>
+      <a href="https://linkedin.com/in/MastaanRandhawa" target="_blank">
+        <svg class="imglogo" width="32" height="32" viewBox="0 0 24 24" fill="#2c3e50"
+          xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn Logo">
+          <path
+            d="M19 0h-14c-2.76 0-5 2.24-5 5v14 c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14 c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.27 c-.97 0-1.75-.79-1.75-1.76s.78-1.75 1.75-1.75 1.75.78 1.75 1.75 -.78 1.76-1.75 1.76zm12.5 11.27h-3v-5.6c0-1.34 -.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.88v1.37h.04 c.4-.75 1.38-1.54 2.83-1.54 3.03 0 3.59 2 3.59 4.53v5.64z" />
+        </svg>
+      </a>
+      <a href="https://github.com/mastaanRandhawa" target="_blank">
+        <svg class="imglogo" width="32" height="32" viewBox="0 0 24 24" fill="#2c3e50"
+          xmlns="http://www.w3.org/2000/svg" aria-label="GitHub Logo">
+          <path
+            d="M12 .297c-6.626 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.599.113.82-.26.82-.577 0-.285-.01-1.04-.016-2.04-3.338.726-4.042-1.61-4.042-1.61 -.546-1.387-1.333-1.757-1.333-1.757-1.089-.744.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.304 3.495.997 .108-.776.418-1.305.76-1.605-2.665-.305-5.466-1.333-5.466-5.93 0-1.31.469-2.381 1.236-3.221-.124-.304-.536-1.527.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 0 1 3.003-.404c1.018.005 2.042.138 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23 .655 1.649.243 2.872.119 3.176.77.84 1.236 1.911 1.236 3.221 0 4.61-2.805 5.622-5.476 5.92.43.372.81 1.102.81 2.222 0 1.604-.014 2.897-.014 3.293 0 .319.217.694.824.576 4.765-1.587 8.2-6.082 8.2-11.384 0-6.627-5.373-12-12-12z" />
+        </svg>
+      </a>
+    </div>
+    <p>&copy; 2025 Mastaan Randhawa. All rights reserved.</p>
   </footer>
 
-  <!-- Include EmailJS SDK -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script type="text/javascript">
-    (function () {
-      emailjs.init("M5PuNXGJVcJ1G8kQU"); // Your public key
-    })();
-
-    document.getElementById('contactForm').addEventListener('submit', function (event) {
-      event.preventDefault(); // Prevent default form submission
-
-      emailjs.sendForm('service_1el02mt', 'template_y61qgki', this)
-        .then(function () {
-          document.getElementById("form-message-success").style.display = "block"; // Show success message
-          document.getElementById("form-message-warning").style.display = "none"; // Hide warning message
-          document.getElementById("contactForm").reset(); // Reset form fields
-        }, function (error) {
-          console.error("EmailJS error: ", error);
-          document.getElementById("form-message-warning").textContent = "Failed to send your message. Please try again.";
-          document.getElementById("form-message-warning").style.display = "block"; // Show warning message
-          document.getElementById("form-message-success").style.display = "none"; // Hide success message
-        });
-    });
-  </script>
 
   <script>
-    // Function to add sticky effect
+    // Theme toggle functionality
+    function toggleTheme() {
+      const body = document.body;
+      const themeIcon = document.getElementById('theme-icon');
+      const currentTheme = body.getAttribute('data-theme');
+
+      if (currentTheme === 'dark') {
+        body.setAttribute('data-theme', 'light');
+        themeIcon.innerHTML = '<path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.24-4.4 2.24-2.98 0-5.4-2.42-5.4-5.4 0-1.81.87-3.41 2.24-4.4-.44-.06-.9-.1-1.36-.1z"/>';
+        localStorage.setItem('theme', 'light');
+      } else {
+        body.setAttribute('data-theme', 'dark');
+        themeIcon.innerHTML = '<path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06z"/>';
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    // Load saved theme
+    document.addEventListener('DOMContentLoaded', function () {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.body.setAttribute('data-theme', savedTheme);
+      const themeIcon = document.getElementById('theme-icon');
+      if (savedTheme === 'dark') {
+        themeIcon.innerHTML = '<path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06z"/>';
+      } else {
+        themeIcon.innerHTML = '<path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.24-4.4 2.24-2.98 0-5.4-2.42-5.4-5.4 0-1.81.87-3.41 2.24-4.4-.44-.06-.9-.1-1.36-.1z"/>';
+      }
+    });
+
+    // Sticky header effect
     window.addEventListener("scroll", function () {
       const header = document.querySelector("header");
       if (window.scrollY > 50) {
@@ -417,9 +642,47 @@
       } else {
         header.classList.remove("sticky");
       }
-
     });
 
+    // Scroll animations
+    function animateOnScroll() {
+      const elements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
+      const windowHeight = window.innerHeight;
+
+      elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+
+        if (elementTop < windowHeight - elementVisible) {
+          element.classList.add('visible');
+        }
+      });
+    }
+
+    // Add animation classes to elements
+    document.addEventListener('DOMContentLoaded', function () {
+      // Add fade-in to cards
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        card.classList.add('fade-in');
+      });
+
+      // Add slide-in to sections
+      const sections = document.querySelectorAll('section');
+      sections.forEach((section, index) => {
+        if (index % 2 === 0) {
+          section.classList.add('slide-in-left');
+        } else {
+          section.classList.add('slide-in-right');
+        }
+      });
+
+      // Initial animation check
+      animateOnScroll();
+    });
+
+    // Listen for scroll events
+    window.addEventListener('scroll', animateOnScroll);
   </script>
   <!-- Show More/Show Less script for portfolio -->
   <script>
@@ -473,13 +736,14 @@
   <script>
     document.addEventListener("DOMContentLoaded", function (event) {
       var dataText = [
-        "a C/C++ Enthusiast 💻.",
-        "skilled in JavaScript & Web Tech 🌐.",
-        "a HTML/CSS Artist 🎨.",
-        "a creative Figma Designer ✏️.",
-        "a master of Frameworks: Bootstrap, ReactJS, ThreeJS, SpringBoot 🛠️.",
-        "a database Whiz: MongoDB, MySQL, SQL/SQLite 🗃️.",
-        "hands-on with Deployment Tools like Render and AWS ☁️."
+        "I am passionate about C and C++ development.",
+        "I am experienced with JavaScript and modern web technologies.",
+        "I enjoy crafting clean and responsive designs with HTML and CSS.",
+        "I love bringing ideas to life through Figma and creative design work.",
+        "I am comfortable working with frameworks like Bootstrap, React, Three.js, and Spring Boot.",
+        "I am familiar with managing data using MongoDB, MySQL, and SQLite.",
+        "I have hands-on experience deploying projects with Render and AWS.",
+        "I have worked with techonologies like Azure, Event Grid, and Event Hubs."
       ];
 
 
@@ -511,12 +775,47 @@
   <!-- lazysizes script for deferred offscreen images -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
 
-  <!-- Three.js & Orbit/GLTFLoader scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/three@latest/build/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three/examples/js/loaders/GLTFLoader.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three/examples/js/controls/OrbitControls.js"></script>
-
+  <!-- Contact Form Script -->
   <script>
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Get form data
+      const formData = new FormData(this);
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const subject = formData.get('subject');
+      const message = formData.get('message');
+
+      // Create mailto link
+      const mailtoLink = `mailto:mastaanrandhawa@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+
+      // Open email client
+      window.location.href = mailtoLink;
+
+      // Show success message
+      const button = this.querySelector('button[type="submit"]');
+      const originalText = button.innerHTML;
+      button.innerHTML = '<svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Message Sent!';
+      button.style.backgroundColor = '#10b981';
+
+      // Reset form
+      this.reset();
+
+      // Reset button after 3 seconds
+      setTimeout(() => {
+        button.innerHTML = originalText;
+        button.style.backgroundColor = '';
+      }, 3000);
+    });
+  </script>
+
+  <!-- Three.js & Orbit/GLTFLoader scripts -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/three@latest/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three/examples/js/controls/OrbitControls.js"></script> -->
+
+  <!-- <script>
     // Grab container
     const container = document.getElementById('three-container');
 
@@ -594,7 +893,7 @@
       camera.updateProjectionMatrix();
       renderer.setSize(container.clientWidth, container.clientHeight);
     });
-  </script>
+  </script> -->
 
 </body>
 
