@@ -640,10 +640,10 @@ nav ul li a:hover {
 #skills {
   background: linear-gradient(135deg, var(--background-primary) 0%, var(--background-secondary) 100%);
   border-radius: var(--radius-xl);
-  margin: var(--space-2xl) var(--space-lg);
+  margin: var(--space-2xl) auto;
   padding: var(--space-3xl) var(--space-2xl);
-  width: calc(100% - 2 * var(--space-lg));
-  max-width: calc(100vw - 2 * var(--space-lg));
+  width: 90%;
+  max-width: 1200px;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -657,6 +657,7 @@ nav ul li a:hover {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--space-2xl);
   margin-top: var(--space-2xl);
+  justify-items: center;
 }
 
 .skill-category {
@@ -664,6 +665,9 @@ nav ul li a:hover {
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
   transition: all var(--transition-normal);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
 }
 
 [data-theme="dark"] .skill-category {
@@ -1134,6 +1138,12 @@ footer p {
     padding: var(--space-2xl) var(--space-lg);
   }
 
+  #skills {
+    margin: var(--space-2xl) auto;
+    width: 95%;
+    padding: var(--space-2xl) var(--space-lg);
+  }
+
   .contact-content {
     grid-template-columns: 1fr;
     gap: var(--space-2xl);
@@ -1330,6 +1340,12 @@ footer p {
   #resume {
     margin: var(--space-2xl) var(--space-md);
     width: calc(100% - 2 * var(--space-md));
+    padding: var(--space-2xl) var(--space-lg);
+  }
+
+  #skills {
+    margin: var(--space-2xl) auto;
+    width: 95%;
     padding: var(--space-2xl) var(--space-lg);
   }
 
